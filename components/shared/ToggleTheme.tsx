@@ -23,7 +23,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="bg-[#F5F5F5] dark:bg-[#071D27] rounded-full p-0.5 border border-[#E3E3E4] dark:border-[#071D27]">
+    <div className="bg-[#F5F5F5] flex items-center  dark:bg-background rounded-full p-0.5 border border-[#E3E3E4] dark:border-[#071D27]">
       <Button
         className={`
             ${
@@ -31,7 +31,7 @@ export function ThemeToggle() {
                 ? "bg-white dark:bg-[#122B37] dark:border-none  border border-[#E3E3E4]"
                 : "bg-transparent"
             }
-             text-black dark:text-slate-100 rounded-full px-3 py-1  shadow-none inline-flex items-center gap-1 justify-center`}
+             text-black w-full  dark:text-slate-100 rounded-full px-3 py-1 3xl:py-2  shadow-none inline-flex items-center gap-1 justify-center`}
         onClick={() => setTheme("light")}
       >
         <Sun className="h-[1.2rem] w-[1.2rem]" />
@@ -44,7 +44,7 @@ export function ThemeToggle() {
                 ? "bg-white dark:bg-[#122B37] dark:border-none  border border-[#E3E3E4]"
                 : "bg-transparent"
             }
-             text-black dark:text-slate-100 rounded-full px-3 py-1 border border-[#E3E3E4] shadow-none inline-flex items-center gap-1 justify-center`}
+             text-black w-full dark:text-slate-100 rounded-full px-3 py-1 3xl:py-2 shadow-none inline-flex items-center gap-1 justify-center`}
         onClick={() => setTheme("dark")}
       >
         <Moon className="h-[1.2rem] w-[1.2rem]" />
