@@ -13,8 +13,8 @@ const Layout = ({
       className={`h-svh flex overflow-y-hidden bg-background gap-2 2xl:gap-2.5 3xl:gap-3  p-2 2xl:p-2.5 3xl:p-3 `}
     >
       <Sidebar />
-      <main className="flex relative flex-col  items-start overflow-hidden  max-h-screen  w-full">
-        <section className="  h-full w-full relative">{children}</section>
+      <main className="flex relative flex-col  items-start overflow-y-auto  max-h-screen  w-full">
+        <section className="  h-full w-full relative ">{children}</section>
       </main>
     </main>
   );
