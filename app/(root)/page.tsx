@@ -1,3 +1,4 @@
+import { CreatePostDialog } from "@/components/shared/CreatePost";
 import { ProfileDialog } from "@/components/shared/ProfileModal";
 import Image from "next/image";
 import React from "react";
@@ -15,20 +16,24 @@ const SocialTradingFeed = () => {
       {/* Header with search and create post button */}
       <div className="w-full flex items-center border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4 justify-between">
         <h2 className="text-lg 2xl:text-xl">Feed</h2>
-        <div className="flex items-center gap-2">
-          <div className="relative">
+        <div className="flex items-center gap-4">
+          <div className="relative border-r pr-4">
             <input
               type="text"
-              placeholder="Search..."
-              className="pl-10 pr-3 py-2 bg-card-foreground rounded-[10px] border focus:outline-none focus:ring-2 focus:ring-primary text-sm 3xl:text-base"
+              placeholder="Search traders"
+              className="pl-9 pr-4 py-2 bg-card-foreground border-[#E3E3E4] dark:border-slate-800 rounded-full border focus:outline-none focus:ring-2 focus:ring-primary text-sm 3xl:text-base w-64"
             />
             <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <FiSearch />
+              <Image
+                src="/icons/search.svg"
+                alt="Search Icon"
+                width={16}
+                height={16}
+                className="dark:invert"
+              />
             </span>
           </div>
-          <button className="bg-primary text-sm 3xl:text-base font-semibold text-white rounded-md px-4 py-2 2xl:px-5 3xl:px-6">
-            Create Post
-          </button>
+          <CreatePostDialog />
           <ProfileDialog />
         </div>
       </div>
