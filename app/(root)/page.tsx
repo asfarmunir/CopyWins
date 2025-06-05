@@ -15,9 +15,9 @@ const SocialTradingFeed = () => {
     <div className="w-full bg-card  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       {/* Header with search and create post button */}
       <div className="w-full flex items-center border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4 justify-between">
-        <h2 className="text-lg 2xl:text-xl">Feed</h2>
+        <h2 className="text-lg 2xl:text-xl font-semibold">Feed</h2>
         <div className="flex items-center gap-4">
-          <div className="relative border-r pr-4">
+          <div className="relative hidden md:block border-r pr-4">
             <input
               type="text"
               placeholder="Search traders"

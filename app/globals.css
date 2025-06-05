@@ -123,25 +123,44 @@
   }
 }
 
-
+/* Light mode (default) */
 *::-webkit-scrollbar {
   width: 8px;
-  height: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #050614;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #3A89D491;
+  height: 6px;
   border-radius: 13px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-track {
+  background: #d8d8dc;
+  border-radius: 13px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0a7be5d4;
+  border-radius: 13px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
   background-color: #3A89D491;
   cursor: pointer;
 }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  *::-webkit-scrollbar-track {
+    background: #2d2d2d;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #3a89d4;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #4a99e4;
+  }
+}
+
+
 
 body {
   font-family: var(--font-geist);

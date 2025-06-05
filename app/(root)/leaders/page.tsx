@@ -316,7 +316,7 @@ const LeadersPage = () => {
       <div className="w-full flex items-center justify-between border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4">
         <h1 className="text-lg 2xl:text-xl font-semibold">Leaders</h1>
         <div className="flex items-center gap-4">
-          <div className="relative border-r pr-4">
+          <div className="relative hidden md:block border-r pr-4">
             <input
               type="text"
               placeholder="Search traders"
@@ -340,19 +340,19 @@ const LeadersPage = () => {
 
       {/* Explore Traders Section */}
       <div className="space-y-4 p-4 2xl:px-9">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-3">
             <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
             <p className="text-gray-500 text-sm">
               Discover top-performing traders to follow and copy their trades
             </p>
           </div>
-          <div className="flex items-center space-x-1 bg-card-foreground rounded-[10px] p-1">
+          <div className="flex items-center  w-full md:w-fit space-x-1 bg-card-foreground rounded-[10px] p-1">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 2xl:w-24 py-2 rounded-lg text-sm font-medium transition ${
+                className={`px-4 2xl:w-24 flex-1 py-2 rounded-lg text-sm font-medium transition ${
                   activeTab === tab
                     ? "bg-card text-foreground shadow-sm"
                     : "text-gray-500 hover:text-foreground"
@@ -374,7 +374,7 @@ const LeadersPage = () => {
 
       {/* Monthly Rising Stars Section */}
       <div className="space-y-4 p-4 2xl:px-9">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-3">
             <h2 className="2xl:text-lg font-semibold">
               Explore Traders Monthly Rising Stars
@@ -383,7 +383,7 @@ const LeadersPage = () => {
               Traders with exceptional month-over-month growth
             </p>
           </div>
-          <button className=" bg-card-foreground px-4 py-2 rounded-md  text-sm font-medium">
+          <button className=" w-full sm:w-fit bg-card-foreground px-4 py-2 rounded-md  text-sm font-semibold">
             Explore rising stars
           </button>
         </div>
@@ -399,14 +399,14 @@ const LeadersPage = () => {
 
       {/* Top Performing 1 Year Section */}
       <div className="space-y-4 p-4 2xl:px-9">
-        <div className="flex items-center justify-between">
+        <div className="flex  flex-col md:flex-row items-center justify-between">
           <div className="mb-3">
             <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
             <p className="text-gray-500 text-sm">
               Traders with exceptional long-term consistency
             </p>
           </div>
-          <button className=" bg-card-foreground px-4 py-2 rounded-md  text-sm font-medium">
+          <button className=" w-full capitalize sm:w-fit bg-card-foreground px-4 py-2 rounded-md  text-sm font-semibold">
             Explore top performers
           </button>
         </div>

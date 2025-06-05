@@ -31,15 +31,15 @@ export const ProfileDialog = () => {
       <DialogTrigger className="text-primary hover:underline">
         View Profile
       </DialogTrigger>
-      <DialogContent className="max-w-[90%] 3xl:max-w-[80%]    rounded-lg">
+      <DialogContent className="max-w-[90%] 3xl:max-w-[80%] max-h-[90svh]   rounded-lg">
         <DialogHeader className=" pt-5 px-4 2xl:px-6">
           <DialogTitle className="text-left text-xl font-bold pb-4 border-b">
             Profile
           </DialogTitle>
         </DialogHeader>
 
-        <div className=" flex  w-full ">
-          <div className="w-[30%]">
+        <div className=" flex flex-col md:flex-row w-full ">
+          <div className=" w-full md:w-[30%] pb-12 md:pb-0">
             <div className="flex flex-col  items-center">
               <div className=" w-full h-40">
                 <Image
@@ -99,13 +99,13 @@ export const ProfileDialog = () => {
               </div>
             </div>
           </div>
-          <div className="  p-4 2xl:px-6  w-[70%] overflow-y-auto h-[85svh] no-scrollbar  ">
+          <div className="  p-4 2xl:px-6  w-full hidden md:block md:w-[70%] overflow-y-auto md:h-[85svh] no-scrollbar  ">
             <nav className="flex gap-4 ">
               <button
                 className={`px-4 rounded-full text-xs 2xl:text-sm border py-2
                 ${
                   tab === "posts"
-                    ? "bg-[#E3E3E4] dark:bg-card dark:bg-slate-500/40 font-semibold"
+                    ? "bg-[#E3E3E4] dark:bg-card font-semibold"
                     : "text-gray-500 dark:text-slate-200"
                 }
                 `}
