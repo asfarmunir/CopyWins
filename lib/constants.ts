@@ -14,11 +14,11 @@ export const navlinks = [
       icons:"leaderboard",
       link: "/leaderboard"
     },
-    {
-      title: "marketplace",
-      icons:"marketplace",
-      link: "/marketplace"
-    },
+    // {
+    //   title: "marketplace",
+    //   icons:"marketplace",
+    //   link: "/marketplace"
+    // },
     {
       title: "My Subscriptions",
       icons:"subscrtiption",

@@ -119,7 +119,7 @@ const Sidebar = () => {
                 >
                   Post a broadcast
                 </Link>
-                <Link href={"/"} className=" hover:font-semibold">
+                <Link href={"/inbox"} className=" hover:font-semibold">
                   Message Group
                 </Link>
               </AccordionContent>
@@ -135,7 +135,7 @@ const Sidebar = () => {
             <p className="text-xs 2xl:text-sm mb-3 3xl:text-base">
               Share and earn money
             </p>
-            <button className="text-xs 2xl:text-sm 3xl:text-base  w-full text-center py-2.5 rounded-full    bg-[#CDD1E7] dark:bg-purple-800/30 font-semibold">
+            <button className="text-xs 2xl:text-sm 3xl:text-base  w-full text-center py-2.5 rounded-full    bg-[#CDD1E7] dark:bg-primary/30 font-semibold">
               Become a Seller
             </button>
           </div>

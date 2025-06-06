@@ -31,7 +31,7 @@ export const ProfileDialog = () => {
       <DialogTrigger className="text-primary hover:underline">
         View Profile
       </DialogTrigger>
-      <DialogContent className="max-w-[90%] 3xl:max-w-[80%] max-h-[90svh]   rounded-lg">
+      <DialogContent className="max-w-[90%] 3xl:max-w-[80%] max-h-[90svh] overflow-hidden   rounded-lg">
         <DialogHeader className=" pt-5 px-4 2xl:px-6">
           <DialogTitle className="text-left text-xl font-bold pb-4 border-b">
             Profile

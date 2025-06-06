@@ -164,7 +164,7 @@ const ShareLinkModal = ({
 
 // Demo component to show the modal
 const Modal = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>

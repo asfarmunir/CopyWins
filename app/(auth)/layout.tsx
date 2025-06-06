@@ -25,7 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         alt="Background"
         width={300}
         height={300}
-        className="object-contain sm:hidden w-full absolute bottom-0  object-bpttom"
+        className="object-contain sm:hidden w-full hidden dark:block   absolute bottom-0  object-bottom"
         priority
       />
       {children}
