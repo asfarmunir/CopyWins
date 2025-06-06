@@ -85,7 +85,7 @@ const NotificationsPage = () => {
         );
 
   return (
-    <div className="w-full bg-card  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
+    <div className="w-full bg-card  rounded-[10px] min-h-full border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       {/* Header */}
       <div className="w-full flex items-center justify-between border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4">
         <h1 className="text-lg 2xl:text-xl font-semibold">Notifications</h1>

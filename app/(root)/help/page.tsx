@@ -57,7 +57,7 @@ const Help = () => {
   };
 
   return (
-    <div className="w-full bg-card rounded-[10px] border flex flex-col gap-4 2xl:gap-6 p-4 2xl:p-6 3xl:p-8">
+    <div className="w-full bg-card rounded-[10px] border min-h-full flex flex-col gap-4 2xl:gap-6 p-4 2xl:p-6 3xl:p-8">
       {/* Header */}
       <div className="w-full flex items-center justify-between border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4">
         <h1 className="text-lg 2xl:text-xl font-semibold">Help</h1>

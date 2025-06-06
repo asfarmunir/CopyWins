@@ -1,4 +1,5 @@
 "use client";
+import WithdrawMoneyModal from "@/components/shared/WithdrawFunds";
 import Image from "next/image";
 import React, { useState } from "react";
 import {
@@ -11,6 +12,7 @@ import {
   FiChevronUp,
 } from "react-icons/fi";
 import { MdShare } from "react-icons/md";
+import ShareLinkModal from "@/components/shared/ShareLinkModal";
 
 const ReferAndEarn = () => {
   const [activeTab, setActiveTab] = useState("Banners");
@@ -127,28 +129,54 @@ const ReferAndEarn = () => {
     },
   ];
 
+  const emailTemplates = [
+    {
+      title: "Introduction email",
+      description: "introduce your audience to our platform",
+      subject: "Subject: Discover the best trading signals platform I've found",
+      content: `Dear [Name],
+
+I wanted to share something that has been helping me with my trading..
+
+[Email content continues]`,
+    },
+    {
+      title: "Promotional Email",
+      description: "Highlight the benefits and special offers",
+      subject: "Subject: Discover the best trading signals platform I've found",
+      content: `Dear [Name],
+
+I wanted to share something that has been helping me with my trading..
+
+[Email content continues]`,
+    },
+    {
+      title: "Follow-up Email",
+      description: "Send a reminder ",
+      subject: "Subject: Discover the best trading signals platform I've found",
+      content: `Dear [Name],
+
+I wanted to share something that has been helping me with my trading..
+
+[Email content continues]`,
+    },
+  ];
+
   const toggleFAQ = (index: number) => {
     setExpandedFAQ(expandedFAQ === index ? null : index);
   };
 
   return (
-    <div className="min-h-screen bg-card">
+    <div className="w-full bg-card min-h-full  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       {/* Header */}
-      <div className="bg-card border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Refer & Earn
-            </h1>
-            <div className="flex items-center gap-4">
-              <button className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm">
-                Withdrawal Status
-              </button>
-              <button className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm">
-                Share Link
-              </button>
-            </div>
-          </div>
+      <div className="w-full flex items-center border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4 mb-1 justify-between">
+        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+          Refer & Earn
+        </h1>
+        <div className="hidden md:flex items-center gap-4">
+          <WithdrawMoneyModal />
+
+          <ShareLinkModal />
         </div>
       </div>
 
@@ -157,7 +185,7 @@ const ReferAndEarn = () => {
         <div className="  border-gray-200 dark:border-gray-700 p-6 lg:p-8 mb-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 Share success, Grow together
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
@@ -165,10 +193,10 @@ const ReferAndEarn = () => {
                 yourself while helping others discover our platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <button className="bg-primary hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                <button className="bg-primary hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-colors">
                   Join now
                 </button>
-                <button className="text-primarbg-primary hover:text-blue-700 bg-card-foreground rounded-full dark:text-blue-400 dark:hover:text-blue-300 px-6 py-2 font-medium transition-colors">
+                <button className="text-primarbg-primary hover:text-blue-700 bg-card-foreground rounded-full dark:text-blue-400 dark:hover:text-blue-300 px-6 py-2 font-semibold transition-colors">
                   Learn more
                 </button>
               </div>
@@ -297,9 +325,9 @@ const ReferAndEarn = () => {
         </div>
 
         {/* Promotion Materials */}
-        <div className="bg-card rounded-lg border border-gray-200 dark:border-gray-700 mb-8">
-          <div className="flex items-center justify-between gap-4">
-            <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="bg-card  border-gray-200 dark:border-gray-700 pt-4 mb-8">
+          <div className="flex flex-col md:flex-row items-start  md:items-center justify-between gap-4 mt-5">
+            <div className=" ">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                 Promotion materials
               </h3>
@@ -307,7 +335,7 @@ const ReferAndEarn = () => {
                 Get creative with our ready-to-use assets
               </p>
             </div>
-            <div className="flex items-center w-full md:w-fit justify-between mb-6">
+            <div className="flex items-center w-full md:w-fit justify-between ">
               <div className="flex items-center text-nowrap space-x-1 bg-card-foreground rounded-full w-full p-1">
                 {["Banners", "Email templates", "Social Media"].map((tab) => (
                   <button
@@ -326,36 +354,83 @@ const ReferAndEarn = () => {
             </div>
           </div>
           <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {banners.map((banner, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 dark:border-gray-700 rounded-lg p-4"
-                >
-                  <div className="bg-gray-100 dark:bg-gray-700 rounded-lg h-32 mb-4 flex items-center justify-center">
-                    <div className="text-gray-400 dark:text-gray-500 text-sm text-center">
-                      Banner Preview
+            {activeTab === "Banners" && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {banners.map((banner, index) => (
+                  <div
+                    key={index}
+                    className="border border-gray-200 dark:border-gray-700 rounded-lg p-4"
+                  >
+                    <div className="bg-gray-100 dark:bg-gray-700 rounded-lg h-32 mb-4 flex items-center justify-center">
+                      <div className="text-gray-400 dark:text-gray-500 text-sm text-center">
+                        Banner Preview
+                      </div>
+                    </div>
+                    <h4 className="font-medium text-gray-900 dark:text-white mb-1">
+                      {banner.size}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                      {banner.description}
+                    </p>
+                    <button className="w-full bg-primary hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                      <FiDownload className="w-4 h-4" />
+                      Download
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {activeTab === "Email templates" && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {emailTemplates.map((template, index) => (
+                  <div
+                    key={index}
+                    className="bg-card-foreground rounded-lg p-1 border border-gray-200 dark:border-gray-600"
+                  >
+                    <div className="bg-card rounded-lg p-4  mb-1">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        {template.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">
+                        {template.description}
+                      </p>
+                    </div>
+
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+                      <div className="mb-4">
+                        <p className="font-medium text-gray-900 dark:text-white text-sm mb-2">
+                          {template.subject}
+                        </p>
+                      </div>
+
+                      <div className="text-sm text-gray-600 dark:text-gray-300 whitespace-pre-line">
+                        {template.content}
+                      </div>
+                      <button className="w-full bg-primary mt-6 hover:bg-blue-700 text-white py-2.5 px-4 rounded-full text-sm font-medium transition-colors">
+                        Copy text
+                      </button>
                     </div>
                   </div>
-                  <h4 className="font-medium text-gray-900 dark:text-white mb-1">
-                    {banner.size}
-                  </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                    {banner.description}
-                  </p>
-                  <button className="w-full bg-primary hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2">
-                    <FiDownload className="w-4 h-4" />
-                    Download
-                  </button>
+                ))}
+              </div>
+            )}
+
+            {activeTab === "Social Media" && (
+              <div className="text-center py-12">
+                <div className="text-gray-400 dark:text-gray-500 mb-4">
+                  <MdShare className="w-12 h-12 mx-auto" />
                 </div>
-              ))}
-            </div>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Social media templates coming soon...
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-card-foreground rounded-lg border border-gray-200 dark:border-gray-700">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="bg-card  border-gray-200 dark:border-gray-700 pt-4 mb-8">
+          <div className="">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
               Frequently asked questions
             </h3>
@@ -363,7 +438,7 @@ const ReferAndEarn = () => {
               Discover your promotion materials from here.
             </p>
           </div>
-          <div className="p-6">
+          <div className="py-8">
             <div className="space-y-4">
               {faqItems.map((item, index) => (
                 <div
