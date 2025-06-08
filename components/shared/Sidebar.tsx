@@ -141,7 +141,6 @@ const Sidebar = () => {
           </div>
           <div className="  rounded-[10px] w-full bg-card-foreground border p-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              {/* <div className=" w-12 h-10 rounded-md bg-primary "></div> */}
               <div>
                 <h2 className="text-sm 2xl:text-base font-semibold 3xl:text-lg">
                   Asfar Munir Asfi
@@ -164,7 +163,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="flex sm:hidden items-center p-2 justify-between">
+      {/* <div className="flex sm:hidden items-center p-2 justify-between">
         <Image
           src={"/logo.svg"}
           alt="logo"
@@ -287,7 +286,6 @@ const Sidebar = () => {
                 </div>
                 <div className="  rounded-[10px] w-full bg-card-foreground border p-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    {/* <div className=" w-12 h-10 rounded-md bg-primary "></div> */}
                     <div>
                       <h2 className="text-sm 2xl:text-base font-semibold 3xl:text-lg">
                         Asfar Munir Asfi
@@ -312,7 +310,7 @@ const Sidebar = () => {
             </div>
           </SheetContent>
         </Sheet>
-      </div>
+      </div> */}
     </>
   );
 };

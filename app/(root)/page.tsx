@@ -1,3 +1,4 @@
+"use client";
 import { CreatePostDialog } from "@/components/shared/CreatePost";
 import { ProfileDialog } from "@/components/shared/ProfileModal";
 import Image from "next/image";
@@ -9,13 +10,34 @@ import {
   FiMessageSquare,
   FiMoreHorizontal,
 } from "react-icons/fi";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const SocialTradingFeed = () => {
+  const [activeTab, setActiveTab] = React.useState("All");
   return (
     <div className="w-full bg-card  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       {/* Header with search and create post button */}
       <div className="w-full flex items-center border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4 justify-between">
-        <h2 className="text-lg 2xl:text-xl font-semibold">Feed</h2>
+        <div className="flex items-center gap-2">
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={35}
+            height={35}
+            priority
+            className="md:hidden"
+          />
+
+          <h2 className="text-lg 2xl:text-xl font-semibold">Feed</h2>
+        </div>
         <div className="flex items-center gap-4">
           <div className="relative hidden md:block border-r pr-4">
             <input
@@ -33,8 +55,20 @@ const SocialTradingFeed = () => {
               />
             </span>
           </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              Latest
+              <ChevronDown className="ml-1 h-4 w-4 text-gray-500 inline-block" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Billing</DropdownMenuItem>
+              <DropdownMenuItem>Team</DropdownMenuItem>
+              <DropdownMenuItem>Subscription</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <CreatePostDialog />
-          <ProfileDialog />
+          {/* <ProfileDialog /> */}
         </div>
       </div>
 
@@ -124,6 +158,23 @@ const SocialTradingFeed = () => {
 
         <div className="lg:col-span-1 space-y-4 2xl:space-y-6">
           {/* Live trade feed */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center space-x-1 bg-card-foreground rounded-full w-full p-1">
+              {["All", "Trading", "Sports"].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-3 py-2 rounded-full flex-1 text-sm font-semibold transition ${
+                    activeTab === tab
+                      ? "bg-card text-foreground shadow-sm"
+                      : "text-gray-500 dark:text-gray-300 hover:text-foreground"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="bg-card-foreground rounded-[10px] border p-4">
             <h2 className="2xl:text-lg font-semibold ">Livetrade feed</h2>
             <p className="text-gray-500 text-sm mb-4">
@@ -139,12 +190,7 @@ const SocialTradingFeed = () => {
                   <div className="flex items-center space-x-3">
                     <p className="bg-card-foreground text-sm p-2 rounded">OK</p>
                     <div>
-                      <p className="font-semibold text-sm mb-1">
-                        CryptoKing{" "}
-                        <span className="text-gray-500 font-medium">
-                          +2.3% 2 min ago
-                        </span>
-                      </p>
+                      <p className="font-semibold text-sm mb-1">CryptoKing </p>
 
                       <p className="text-gray-500 text-xs 2xl:text-sm">
                         BTC/USD $61,245.00
@@ -154,9 +200,17 @@ const SocialTradingFeed = () => {
                       </p>
                     </div>
                   </div>
-                  <button className=" border px-3 rounded-full py-1 text-xs 2xl:text-sm font-medium">
-                    Copy
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <p className="text-green-500 font-medium">+2.3%</p>
+                      <p className="text-gray-500 font-medium text-xs">
+                        +22 min ago
+                      </p>
+                    </div>
+                    <button className=" border px-3 rounded-full py-1 text-xs 2xl:text-sm font-medium">
+                      Copy
+                    </button>
+                  </div>
                 </div>
               ))}
               <button className=" bg-card rounded-full border w-full py-2 capitalize text-xs 2xl:text-sm font-semibold">
@@ -197,7 +251,7 @@ const SocialTradingFeed = () => {
                     <button className=" border px-2 rounded-full py-1 text-xs font-medium">
                       Follow
                     </button>
-                    <button className=" border px-2 rounded-full py-1 text-xs font-medium">
+                    <button className=" border px-2 bg-primary text-white rounded-full py-1.5 text-xs font-semibold">
                       Subscribe
                     </button>
                   </div>
