@@ -31,17 +31,17 @@ export const ProfileDialog = () => {
       <DialogTrigger className="text-primary hover:underline">
         View Profile
       </DialogTrigger>
-      <DialogContent className="max-w-[90%] 3xl:max-w-[80%] max-h-[90svh] overflow-hidden   rounded-lg">
+      <DialogContent className="max-w-[90%] 3xl:max-w-[80%] max-h-[95svh] md:max-h-[90svh] overflow-hidden   rounded-lg">
         <DialogHeader className=" pt-5 px-4 2xl:px-6">
           <DialogTitle className="text-left text-xl font-bold pb-4 border-b">
             Profile
           </DialogTitle>
         </DialogHeader>
 
-        <div className=" flex flex-col md:flex-row w-full ">
-          <div className=" w-full md:w-[30%] pb-12 md:pb-0">
+        <div className=" flex flex-col md:flex-row w-full  ">
+          <div className=" w-full md:w-[30%] pb-6 md:pb-0">
             <div className="flex flex-col  items-center">
-              <div className=" w-full h-40">
+              <div className=" w-full h-28 md:h-40">
                 <Image
                   src={"/profile-bg.svg"}
                   alt="Profile"
@@ -51,21 +51,21 @@ export const ProfileDialog = () => {
                 />
               </div>
               <div className="flex flex-col -mt-12  items-center">
-                <div className=" w-28 h-28 rounded-full border-2 border-white dark:border-slate-800 bg-primary"></div>
+                <div className=" w-20 md:w-28 h-20 md:h-20 rounded-full border-2 border-white dark:border-slate-800 bg-primary"></div>
                 <h2 className="text-xl font-semibold inline-flex items-center gap-3">
                   Sandro Carossela
                   <MdVerified color="green" />
                 </h2>
-                <p className="text-gray-500">@UWSMC</p>
+                <p className="text-gray-500 text-xs md:text-sm">@UWSMC</p>
               </div>
               <div className="flex gap-2 my-3">
-                <button className="px-6 py-2 bg-primary text-white rounded-full text-sm">
+                <button className="px-6 py-2 bg-primary text-white rounded-full text-xs md:text-sm">
                   Follow
                 </button>
-                <button className="px-4 py-2 bg-card     border rounded-full text-sm">
+                <button className="px-4 py-2 bg-card     border rounded-full text-xs md:text-sm">
                   Subscribe
                 </button>
-                <button className="px-4 py-2 bg-card     border rounded-full text-sm">
+                <button className="px-4 py-2 bg-card     border rounded-full text-xs md:text-sm">
                   Leave a tip
                 </button>
               </div>
@@ -74,16 +74,28 @@ export const ProfileDialog = () => {
             {/* Stats */}
             <div className="flex justify-center  items-center gap-7 my-4">
               <div className="flex flex-col items-center">
-                <span className="font-bold text-lg 2xl:text-xl">142</span>{" "}
-                <span className="text-gray-500">Posts</span>
+                <span className="font-bold text-base md:text-lg 2xl:text-xl">
+                  142
+                </span>{" "}
+                <span className="text-gray-500 text-xs md:text-base 2xl:text-base">
+                  Posts
+                </span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-bold text-lg 2xl:text-xl">32K</span>{" "}
-                <span className="text-gray-500">Followers</span>
+                <span className="font-bold text-base md:text-lg 2xl:text-xl">
+                  32K
+                </span>{" "}
+                <span className="text-gray-500 text-xs md:text-base 2xl:text-base">
+                  Followers
+                </span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-bold text-lg 2xl:text-xl">117</span>{" "}
-                <span className="text-gray-500">Following</span>
+                <span className="font-bold text-base md:text-lg 2xl:text-xl">
+                  117
+                </span>{" "}
+                <span className="text-gray-500 text-xs md:text-base 2xl:text-base">
+                  Following
+                </span>
               </div>
             </div>
 
@@ -99,13 +111,13 @@ export const ProfileDialog = () => {
               </div>
             </div>
           </div>
-          <div className="  p-4 2xl:px-6  w-full hidden md:block md:w-[70%] overflow-y-auto md:h-[85svh] no-scrollbar  ">
-            <nav className="flex gap-4 ">
+          <div className="  p-2 md:p-4 2xl:px-6  w-full  md:w-[70%] overflow-y-auto  h-[45svh] md:h-[85svh] no-scrollbar  ">
+            <nav className="flex gap-1 md:gap-4 ">
               <button
-                className={`px-4 rounded-full text-xs 2xl:text-sm border py-2
+                className={`  rounded-full px-4 text-xs 2xl:text-sm   text-nowrap
                 ${
                   tab === "posts"
-                    ? "bg-[#E3E3E4] dark:bg-card font-semibold"
+                    ? "bg-card border p-2  dyark:bg-card font-semibold"
                     : "text-gray-500 dark:text-slate-200"
                 }
                 `}
@@ -114,10 +126,10 @@ export const ProfileDialog = () => {
                 Posts
               </button>
               <button
-                className={`px-4 rounded-full text-xs 2xl:text-sm border py-2
+                className={` rounded-full hidden md:block text-xs 2xl:text-sm px-4
                     ${
                       tab === "Client Reviews"
-                        ? "bg-[#E3E3E4] dark:bg-card font-semibold"
+                        ? "bg-card  py-2 dark:bg-card font-semibold"
                         : "text-gray-500 dark:text-slate-200"
                     }
                     `}
@@ -126,10 +138,10 @@ export const ProfileDialog = () => {
                 Client Reviews
               </button>
               <button
-                className={`px-4 rounded-full text-xs 2xl:text-sm border py-2
+                className={`  rounded-full px-4 text-xs 2xl:text-sm   text-nowrap
                     ${
                       tab === "Premium content"
-                        ? "bg-[#E3E3E4] dark:bg-card font-semibold"
+                        ? "bg-card border  py-2 dark:bg-card font-semibold"
                         : "text-gray-500 dark:text-slate-200"
                     }
                     `}
@@ -138,10 +150,10 @@ export const ProfileDialog = () => {
                 Premium content
               </button>
               <button
-                className={`px-4 rounded-full text-xs 2xl:text-sm border py-2
+                className={`  rounded-full px-4 text-xs 2xl:text-sm   text-nowrap
                     ${
                       tab === "Signal history"
-                        ? "bg-[#E3E3E4] dark:bg-card font-semibold"
+                        ? "bg-card border  py-2 dark:bg-card font-semibold"
                         : "text-gray-500 dark:text-slate-200"
                     }
                     `}
@@ -150,10 +162,10 @@ export const ProfileDialog = () => {
                 Signal history
               </button>
               <button
-                className={`px-4 rounded-full text-xs 2xl:text-sm border py-2
+                className={`rounded-full px-4 text-xs 2xl:text-sm   text-nowrap
                     ${
                       tab === "About"
-                        ? "bg-[#E3E3E4] dark:bg-card font-semibold"
+                        ? "bg-card bord ery p-2 dark:bg-card font-semibold"
                         : "text-gray-500 dark:text-slate-200"
                     }
                     `}

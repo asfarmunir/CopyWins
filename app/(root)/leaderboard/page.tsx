@@ -112,7 +112,18 @@ const SignalProvidersLeaderboard = () => {
   return (
     <div className="w-full bg-card  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       <div className="w-full flex items-center border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4 justify-between">
-        <h2 className="text-lg 2xl:text-xl font-semibold">Leaderboard</h2>
+        <div className="flex items-center gap-2">
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={35}
+            height={35}
+            priority
+            className="md:hidden"
+          />
+
+          <h2 className="text-lg 2xl:text-xl font-semibold">Leaderboard</h2>
+        </div>
         <div className="flex items-center gap-4">
           <div className="relative hidden md:block  pr-4">
             <input
@@ -134,11 +145,11 @@ const SignalProvidersLeaderboard = () => {
       </div>
       {/* Header Section */}
       <div className="flex items-center flex-col md:flex-row gap-8 justify-between max-w-5xl w-full mx-auto ">
-        <div className="flex-1">
+        <div className="flex-1 pt-6 md:pt-0">
           <h1 className="text-2xl 2xl:text-3xl font-bold mb-1 md:mb-2">
             Discover top <span className="text-primary">Signal</span> Providers
           </h1>
-          <h2 className="text-lg 2xl:text-xl font-semibold mb-4">
+          <h2 className="text-2xl md:text-lg 2xl:text-xl font-semibold mb-4">
             in one place
           </h2>
           <p className="text-gray-500 text-sm 2xl:text-base mb-6 max-w-lg">
@@ -150,15 +161,17 @@ const SignalProvidersLeaderboard = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 w-full md:w-fit">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-card-foreground rounded-[10px] border p-4 text-center"
+              className="bg-card-foreground p-0.5 w-full rounded-[10px]"
             >
-              <div className="flex justify-center mb-3">{stat.icon}</div>
-              <div className="text-2xl font-bold mb-1">{stat.value}</div>
-              <div className="text-gray-500 text-sm">{stat.label}</div>
+              <div className="bg-card rounded-[10px] border p-3 md:pr-8 2xl:pr-16 text-start">
+                <div className="flex justify-start mb-3">{stat.icon}</div>
+                <div className="text-2xl font-bold mb-1">{stat.value}</div>
+                <div className="text-gray-500 text-sm">{stat.label}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -209,11 +222,27 @@ const SignalProvidersLeaderboard = () => {
                   className="flex items-center gap-3 p-4 bg-card rounded-md hover:bg-card transition-colors"
                 >
                   <div
-                    className={`w-6 h-6 rounded-full ${getRankColor(
-                      trader.rank
-                    )} flex items-center justify-center text-white text-xs font-bold`}
+                    className={`
+                  ${
+                    trader.rank === 1
+                      ? "border-yellow-500"
+                      : trader.rank === 2
+                      ? "border-gray-400"
+                      : trader.rank === 3
+                      ? "border-orange-500"
+                      : "border-gray-300"
+                  }
+                  pl-2 border-l-4
+                  
+                  `}
                   >
-                    {trader.rank}
+                    <div
+                      className={` w-6 h-6 2xl:w-9 2xl:h-9  rounded-full ${getRankColor(
+                        trader.rank
+                      )} flex items-center justify-center text-white text-xs font-bold`}
+                    >
+                      {trader.rank}
+                    </div>
                   </div>
 
                   <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center text-white text-xs font-semibold">
@@ -262,11 +291,27 @@ const SignalProvidersLeaderboard = () => {
                   className="flex items-center gap-3 p-4 bg-card rounded-md hover:bg-card transition-colors"
                 >
                   <div
-                    className={`w-6 h-6 rounded-full ${getRankColor(
-                      trader.rank
-                    )} flex items-center justify-center text-white text-xs font-bold`}
+                    className={`
+                  ${
+                    trader.rank === 1
+                      ? "border-yellow-500"
+                      : trader.rank === 2
+                      ? "border-gray-400"
+                      : trader.rank === 3
+                      ? "border-orange-500"
+                      : "border-gray-300"
+                  }
+                  pl-2 border-l-4
+                  
+                  `}
                   >
-                    {trader.rank}
+                    <div
+                      className={` w-6 h-6 2xl:w-9 2xl:h-9  rounded-full ${getRankColor(
+                        trader.rank
+                      )} flex items-center justify-center text-white text-xs font-bold`}
+                    >
+                      {trader.rank}
+                    </div>
                   </div>
 
                   <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center text-white text-xs font-semibold">
@@ -314,11 +359,27 @@ const SignalProvidersLeaderboard = () => {
                   className="flex items-center gap-3 p-4 bg-card rounded-md hover:bg-card transition-colors"
                 >
                   <div
-                    className={`w-6 h-6 rounded-full ${getRankColor(
-                      trader.rank
-                    )} flex items-center justify-center text-white text-xs font-bold`}
+                    className={`
+                  ${
+                    trader.rank === 1
+                      ? "border-yellow-500"
+                      : trader.rank === 2
+                      ? "border-gray-400"
+                      : trader.rank === 3
+                      ? "border-orange-500"
+                      : "border-gray-300"
+                  }
+                  pl-2 border-l-4
+                  
+                  `}
                   >
-                    {trader.rank}
+                    <div
+                      className={` w-6 h-6 2xl:w-9 2xl:h-9  rounded-full ${getRankColor(
+                        trader.rank
+                      )} flex items-center justify-center text-white text-xs font-bold`}
+                    >
+                      {trader.rank}
+                    </div>
                   </div>
 
                   <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center text-white text-xs font-semibold">
@@ -368,11 +429,27 @@ const SignalProvidersLeaderboard = () => {
                   className="flex items-center gap-3 p-4 bg-card rounded-md hover:bg-card transition-colors"
                 >
                   <div
-                    className={`w-6 h-6 rounded-full ${getRankColor(
-                      trader.rank
-                    )} flex items-center justify-center text-white text-xs font-bold`}
+                    className={`
+                  ${
+                    trader.rank === 1
+                      ? "border-yellow-500"
+                      : trader.rank === 2
+                      ? "border-gray-400"
+                      : trader.rank === 3
+                      ? "border-orange-500"
+                      : "border-gray-300"
+                  }
+                  pl-2 border-l-4
+                  
+                  `}
                   >
-                    {trader.rank}
+                    <div
+                      className={` w-6 h-6 2xl:w-9 2xl:h-9  rounded-full ${getRankColor(
+                        trader.rank
+                      )} flex items-center justify-center text-white text-xs font-bold`}
+                    >
+                      {trader.rank}
+                    </div>
                   </div>
 
                   <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center text-white text-xs font-semibold">

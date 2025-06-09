@@ -8,9 +8,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { X, ChevronDown, Upload } from "lucide-react";
+import { X, ChevronDown, Upload, Flame } from "lucide-react";
 import Image from "next/image";
 import { motion, useMotionValue, animate } from "framer-motion";
+import { TbFlameFilled } from "react-icons/tb";
 
 const BecomeSignalProvider = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -105,9 +106,11 @@ const BecomeSignalProvider = () => {
                 height={48}
                 className="w-12 h-12 rounded-full bg-gray-200"
               />
-              <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full">
-                Recent win 94%
-              </span>
+              <p className="bg-orange-500 text-white text-xs font-semibold px-2 py-2 rounded-full">
+                <TbFlameFilled className="inline-block w-4 h-4 mr-1" />
+
+                <span>Recent win 2 min ago</span>
+              </p>
             </div>
 
             <h4 className="font-semibold">Trading</h4>
@@ -154,9 +157,11 @@ const BecomeSignalProvider = () => {
                 height={48}
                 className="w-12 h-12 rounded-full bg-gray-200"
               />
-              <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full">
-                Recent win 94%
-              </span>
+              <p className="bg-orange-500 text-white text-xs font-semibold px-2 py-2 rounded-full">
+                <TbFlameFilled className="inline-block w-4 h-4 mr-1" />
+
+                <span>Recent win 2 min ago</span>
+              </p>
             </div>
 
             <h4 className="font-semibold">Sports</h4>
@@ -189,7 +194,7 @@ const BecomeSignalProvider = () => {
       <button
         onClick={handleContinue}
         disabled={!selectedIndustry}
-        className={`w-full py-3 rounded-full dark:disabled:bg-slate-900 font-semibold transition ${
+        className={`w-full py-2 rounded-full dark:disabled:bg-slate-900 font-semibold transition ${
           selectedIndustry
             ? "bg-primary text-white hover:bg-primary"
             : "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -341,7 +346,7 @@ const BecomeSignalProvider = () => {
         </button>
         <button
           onClick={handleContinue}
-          className="flex-1 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary transition"
+          className="flex-1 py-2 bg-primary text-white rounded-full font-medium hover:bg-primary transition"
         >
           Continue
         </button>
@@ -374,7 +379,7 @@ const BecomeSignalProvider = () => {
               onChange={(e) =>
                 handleInputChange("subscriptionPrice", e.target.value)
               }
-              className="w-full pl-1 pr-3 py-3 border border-gray-300 dark:border-slate-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-card text-lg font-semibold"
+              className="w-full pl-16 pr-3 py-3 border border-gray-300 dark:border-slate-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-card text-lg font-semibold"
             />
           </div>
         </div>
@@ -552,7 +557,7 @@ const BecomeSignalProvider = () => {
         </button>
         <button
           onClick={handleContinue}
-          className="flex-1 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary transition"
+          className="flex-1 py-2 bg-primary text-white rounded-full font-medium hover:bg-primary transition"
         >
           Complete
         </button>
@@ -904,7 +909,7 @@ const BecomeSignalProvider = () => {
           </button>
           <button
             onClick={handleContinue}
-            className="flex-1 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary transition"
+            className="flex-1 py-2 bg-primary text-white rounded-full font-medium hover:bg-primary transition"
           >
             Continue
           </button>
@@ -1078,7 +1083,7 @@ const BecomeSignalProvider = () => {
       <SheetTrigger asChild>
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-primary text-white px-4 py-2 rounded-[10px] text-sm font-medium hover:bg-primary transition"
+          className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition"
         >
           Become a Signal Provider
         </button>

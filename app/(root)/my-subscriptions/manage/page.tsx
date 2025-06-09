@@ -166,7 +166,7 @@ const ManageSubscriptionsPage = () => {
                     Cancel
                   </button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-lg p-3">
+                <DialogContent className="sm:max-w-2xl p-3">
                   <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <DialogTitle className="text-lg font-semibold">
                       Cancel Subscription

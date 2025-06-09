@@ -13,6 +13,14 @@ import {
 } from "react-icons/fi";
 import { MdShare } from "react-icons/md";
 import ShareLinkModal from "@/components/shared/ShareLinkModal";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const ReferAndEarn = () => {
   const [activeTab, setActiveTab] = useState("Banners");
@@ -170,10 +178,20 @@ I wanted to share something that has been helping me with my trading..
     <div className="w-full bg-card min-h-full  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       {/* Header */}
       <div className="w-full flex items-center border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4 mb-1 justify-between">
-        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
-          Refer & Earn
-        </h1>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={30}
+            height={30}
+            priority
+            className="md:hidden"
+          />
+          <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+            Notifications
+          </h1>{" "}
+        </div>
+        <div className="flex items-center gap-2 md:gap-4">
           <WithdrawMoneyModal />
 
           <ShareLinkModal />
@@ -182,9 +200,9 @@ I wanted to share something that has been helping me with my trading..
 
       <div className="max-w-7xl bg-card mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section */}
-        <div className="  border-gray-200 dark:border-gray-700 p-6 lg:p-8 mb-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="flex-1 text-center lg:text-left">
+        <div className="  border-gray-200 dark:border-gray-700 p-2 md:p-6 lg:p-8 mb-8 w-full ">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8  w-full">
+            <div className="flex-1 text-center lg:text-left w-full">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 Share success, Grow together
               </h2>
@@ -202,7 +220,7 @@ I wanted to share something that has been helping me with my trading..
               </div>
             </div>
 
-            <div className="bg-card-foreground p-1 rounded-lg min-w-[300px] w-full xl:max-w-[500px]">
+            <div className="bg-card-foreground p-1 rounded-lg min-w-[300px]  w-full xl:max-w-[500px]">
               <div className="bg-card rounded-lg p-6 ">
                 <Image
                   src="/affiliate.svg"
@@ -270,7 +288,7 @@ I wanted to share something that has been helping me with my trading..
         </div>
 
         {/* Recent Referrals */}
-        <div className="bg-card rounded-lg border border-gray-200 dark:border-gray-700 mb-8">
+        <div className="bg-card hidden md:block rounded-lg border border-gray-200 dark:border-gray-700 mb-8 overflow-x-auto">
           <div className="p-6 border-b border-gray-200 dark:border-gray-700">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
               Recent referrals
@@ -279,48 +297,48 @@ I wanted to share something that has been helping me with my trading..
               Your most recent referral activity
             </p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b bg-card-foreground border-gray-200 dark:border-gray-700">
-                  <th className="text-left py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+          <div className="min-w-full">
+            <Table className="w-full">
+              <TableHeader>
+                <TableRow className="bg-card-foreground hover:bg-card-foreground">
+                  <TableHead className="py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap">
                     NAME
-                  </th>
-                  <th className="text-left py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+                  </TableHead>
+                  <TableHead className="py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap">
                     DATE
-                  </th>
-                  <th className="text-left py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+                  </TableHead>
+                  <TableHead className="py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap">
                     STATUS
-                  </th>
-                  <th className="text-right py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+                  </TableHead>
+                  <TableHead className="py-3 px-6 text-sm font-medium text-gray-600 dark:text-gray-300 text-right whitespace-nowrap">
                     COMMISSION
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {recentReferrals.map((referral, index) => (
-                  <tr
+                  <TableRow
                     key={index}
-                    className="border-b border-gray-100 dark:border-gray-700"
+                    className="border-b border-gray-100 dark:border-gray-700 hover:bg-card"
                   >
-                    <td className="py-3 px-6 text-sm text-gray-900 dark:text-white">
+                    <TableCell className="py-3 px-6 text-sm text-gray-900 dark:text-white whitespace-nowrap">
                       {referral.name}
-                    </td>
-                    <td className="py-3 px-6 text-sm text-gray-600 dark:text-gray-300">
+                    </TableCell>
+                    <TableCell className="py-3 px-6 text-sm text-gray-600 dark:text-gray-300 whitespace-nowrap">
                       {referral.date}
-                    </td>
-                    <td className="py-3 px-6">
+                    </TableCell>
+                    <TableCell className="py-3 px-6 whitespace-nowrap">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
                         {referral.status}
                       </span>
-                    </td>
-                    <td className="py-3 px-6 text-sm text-gray-900 dark:text-white text-right">
+                    </TableCell>
+                    <TableCell className="py-3 px-6 text-sm text-gray-900 dark:text-white text-right whitespace-nowrap">
                       {referral.commission}
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
           </div>
         </div>
 
@@ -438,12 +456,12 @@ I wanted to share something that has been helping me with my trading..
               Discover your promotion materials from here.
             </p>
           </div>
-          <div className="py-8">
-            <div className="space-y-4">
+          <div className="py-4 md:py-8">
+            <div className="space-y-2">
               {faqItems.map((item, index) => (
                 <div
                   key={index}
-                  className="border-b border-gray-200 dark:border-gray-700 pb-4"
+                  className="border-b border-gray-200 bg-card-foreground dark:border-gray-700 p-3 2xl:p-4 rounded-[10px] last:border-b-0"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}

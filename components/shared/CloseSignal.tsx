@@ -70,7 +70,7 @@ const CloseSignalSheet = () => {
       <SheetTrigger asChild>
         <button
           onClick={() => setIsOpen(true)}
-          className="px-3 md:py-1.5 w-full md:w-fit py-1.5 text-xs bg-card 2xl:text-sm border font-medium rounded-full "
+          className=" md:px-3 text-nowrap md:py-1.5 w-full md:w-fit py-1.5 text-xs bg-card 2xl:text-sm  font-medium rounded-full "
         >
           Close Signal
         </button>

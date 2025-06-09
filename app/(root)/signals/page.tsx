@@ -93,44 +93,51 @@ const UpcomingSignalCard = ({
         </div>
 
         {/* Price Levels */}
-        <div className="grid bg-card-foreground w-full p-1 rounded-[10px] grid-cols-3 gap-1">
-          <div className="text-center bg-card p-2 md:p-5 rounded-tl-lg rounded-bl-lg">
-            <p className="text-xs text-gray-500  dark:text-gray-300 mb-1">
+        <div className="grid bg-card-foreground w-full p-1 rounded-[10px] grid-cols-6 gap-1">
+          {/* Entry - full width on small, 2 cols on medium (1/3 of 6) */}
+          <div className="text-center col-span-6 md:col-span-2 bg-card p-2 md:p-5 rounded-tl-lg rounded-bl-lg">
+            <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">
               Entry
             </p>
-            <p className="font-semibold text-xs  md:text-sm">{entry}</p>
+            <p className="font-semibold text-xs md:text-sm">{entry}</p>
           </div>
-          <div className="text-center bg-card p-2 md:p-5 rounded">
-            <p className="text-xs text-gray-500  dark:text-gray-300 mb-1">
+
+          {/* Target - 3 cols on small (1.5 of 3), 2 cols on medium */}
+          <div className="text-center bg-card p-2 col-span-3 md:col-span-2 md:p-5 rounded">
+            <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">
               Target
             </p>
-            <p className="font-semibold text-xs  md:text-sm text-green-500">
+            <p className="font-semibold text-xs md:text-sm text-green-500">
               {target}
             </p>
           </div>
-          <div className="text-center bg-card p-2 md:p-5 rounded-tr-lg rounded-br-lg">
-            <p className="text-xs text-gray-500  dark:text-gray-300 mb-1">
+
+          {/* Stop - 3 cols on small (1.5 of 3), 2 cols on medium */}
+          <div className="text-center bg-card p-2 col-span-3 md:col-span-2 md:p-5 rounded-tr-lg rounded-br-lg">
+            <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">
               Stop
             </p>
-            <p className="font-semibold text-xs  md:text-sm text-red-500">
+            <p className="font-semibold text-xs md:text-sm text-red-500">
               {stop}
             </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col md:flex-row gap-3 items-center justify-between pt-2">
-          <div className="flex items-center gap-1.5 bg-card-foreground p-2 px-4 rounded-full text-gray-500  dark:text-gray-300 ">
-            <LucideBellRing size={18} />
-            <p className="text-sm  font-semibold ">Waiting for confirmation</p>
+        <div className="flex  gap-1 items-center justify-between pt-2">
+          <div className="flex items-center gap-1.5 bg-card-foreground p-2 px-2 md:px-4 rounded-full text-gray-500  dark:text-gray-300 ">
+            <LucideBellRing size={16} />
+            <p className="text-xs md:text-sm  font-semibold ">
+              Waiting for confirmation
+            </p>
           </div>
-          <div className="flex space-x-2 w-full md:w-fit">
+          <div className="flex space-x-2 ">
             {status === "waiting" ? (
               <>
-                <button className="px-3 w-full md:w-fit py-1.5 text-sm border rounded-full hover:bg-gray-50 dark:hover:bg-gray-800">
+                <button className="px-2.5  py-1.5 text-xs md:text-sm  rounded-full hover:bg-gray-50 dark:hover:bg-gray-800">
                   Edit
                 </button>
-                <button className="px-3 w-full md:w-fit py-1.5 text-sm bg-primary text-white rounded-full hover:bg-blue-600">
+                <button className="px-2.5  py-1.5 text-xs md:text-sm bg-primary text-white rounded-full hover:bg-blue-600">
                   Send now
                 </button>
               </>
@@ -138,8 +145,8 @@ const UpcomingSignalCard = ({
               <>
                 <CloseSignalSheet />
 
-                <button className="px-3 py-0 md:py-1.5 w-full md:w-fit text-xs md:text-sm bg-primary/20  border border-primary text-primary  dark:text-white font-semibold rounded-full cursor-not-allowed">
-                  <Check className="inline-block mr-1" size={18} />
+                <button className="px-4 md:px-3 py-0 md:py-1.5 w-full md:w-fit text-xs md:text-sm bg-primary/20  border border-primary text-primary  dark:text-white font-semibold rounded-full cursor-not-allowed">
+                  <Check className="inline-block mr-1" size={16} />
                   Sent
                 </button>
               </>
@@ -330,15 +337,26 @@ const SignalsPage = () => {
     <div className="w-full bg-card rounded-[10px] border flex flex-col gap-4 2xl:gap-6 p-3 2xl:p-4 3xl:p-5">
       {/* Header */}
       <div className="w-full flex items-center justify-between border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4">
-        <h1 className="text-lg 2xl:text-xl font-semibold">Signals</h1>
+        <div className="flex items-center gap-2">
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={35}
+            height={35}
+            priority
+            className="md:hidden"
+          />
+
+          <h1 className="text-lg 2xl:text-xl font-semibold">Signals</h1>
+        </div>
         <div className="flex items-center gap-4">
           <Link
             href={"/signals/manage"}
-            className="px-4 py-2 bg-card-foreground border rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+            className="px-2 md:px-4 py-2 bg-card-foreground border rounded-full text-xs md:text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
           >
             Manage signals
           </Link>
-          <button className="px-4 py-2 bg-card-foreground border rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800">
+          <button className="p2 md:px-4-4 py-2 bg-card-foreground border rounded-full text-xs md:text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800">
             Manage plans
           </button>
         </div>
@@ -371,12 +389,12 @@ const SignalsPage = () => {
                   Signals scheduled for release
                 </p>
               </div>
-              <div className="flex items-center  w-full md:w-fit space-x-1 bg-card-foreground rounded-[10px] p-1">
+              <div className="flex items-center  w-full md:w-fit space-x-1 bg-card-foreground rounded-full p-1">
                 {upcomingTabs.map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setUpcomingTab(tab)}
-                    className={`px-3 py-2 rounded-lg flex-1 md:flex-none text-sm font-medium transition ${
+                    className={`px-3 py-2 rounded-full flex-1 md:flex-none text-sm font-medium transition ${
                       upcomingTab === tab
                         ? "bg-card text-foreground shadow-sm"
                         : "text-gray-500  dark:text-gray-300 hover:text-foreground"

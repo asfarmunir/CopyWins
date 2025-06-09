@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FiSearch, FiChevronDown, FiChevronUp } from "react-icons/fi";
 
@@ -60,7 +61,18 @@ const Help = () => {
     <div className="w-full bg-card rounded-[10px] border min-h-full flex flex-col gap-4 2xl:gap-6 p-4 2xl:p-6 3xl:p-8">
       {/* Header */}
       <div className="w-full flex items-center justify-between border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4">
-        <h1 className="text-lg 2xl:text-xl font-semibold">Help</h1>
+        <div className="flex items-center gap-2">
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={35}
+            height={35}
+            priority
+            className="md:hidden"
+          />
+
+          <h2 className="text-lg 2xl:text-xl font-semibold">Help</h2>
+        </div>
       </div>
 
       {/* Hero Section */}
@@ -85,14 +97,14 @@ const Help = () => {
           <div className="relative w-full max-w-xl mx-auto">
             <FiSearch
               className="absolute z-50 left-8 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-              size={18}
+              size={20}
             />
             <input
               type="text"
               placeholder="Search for answers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-[90%] md:w-full pl-10 pr-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
+              className="w-[90%] md:w-full pl-12 pr-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
             />
           </div>
         </div>
@@ -137,7 +149,7 @@ const Help = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4  2xl:px-6 py-2 2xl:py-2.5 font-semibold text-sm rounded-full capitalize transition-colors ${
+              className={`px-4  2xl:px-6 py-2 2xl:py-2.5 font-semibold flex-1 text-nowrap text-sm rounded-full capitalize transition-colors ${
                 activeCategory === category
                   ? "bg-card text-foreground "
                   : "text-gray-600 dark:text-gray-400 hover:bg-card-foreground hover:text-foreground"
