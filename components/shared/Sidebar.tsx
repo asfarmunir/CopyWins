@@ -110,7 +110,10 @@ const Sidebar = () => {
                 Signal
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 pl-8">
-                <Link href={"/signals"} className=" hover:font-semibold">
+                <Link
+                  href={"/signals/dashboard"}
+                  className=" hover:font-semibold"
+                >
                   Dashboard
                 </Link>
                 <Link

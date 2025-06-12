@@ -206,7 +206,7 @@ const TopSignalItem = ({
       </div>
       <div className="w-full mb-4 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mr-2">
         <div
-          className="bg-primary/80 h-1.5 rounded-full"
+          className="bg-gray-900 dark:bg-primary/80 0 h-1.5 rounded-full"
           style={{ width: engagement }}
         ></div>
       </div>
@@ -356,7 +356,7 @@ const SignalsPage = () => {
           >
             Manage signals
           </Link>
-          <button className="p2 md:px-4-4 py-2 bg-card-foreground border rounded-full text-xs md:text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800">
+          <button className="px-2 md:px-4 py-2 bg-card-foreground border rounded-full text-xs md:text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800">
             Manage plans
           </button>
         </div>

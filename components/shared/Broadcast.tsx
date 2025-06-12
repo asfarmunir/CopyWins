@@ -313,7 +313,7 @@ const PostBroadcast = () => {
 
       <button
         onClick={handleContinue}
-        className="w-full py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary transition"
+        className="w-full py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary transition"
       >
         Continue
       </button>
@@ -393,13 +393,13 @@ const PostBroadcast = () => {
         <div className="flex gap-3">
           <button
             onClick={handlePrevious}
-            className="flex-1 py-3 border border-gray-300 dark:border-slate-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+            className="flex-1 py-2 border border-gray-300 dark:border-slate-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition"
           >
             Previous
           </button>
           <button
             onClick={() => setCurrentStep(3)}
-            className="flex-1 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary transition"
+            className="flex-1 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary transition"
           >
             Continue
           </button>
@@ -566,7 +566,7 @@ const PostBroadcast = () => {
         <div className="flex gap-3">
           <button
             onClick={() => setCurrentStep(2)}
-            className="flex-1 py-3 border border-gray-300 dark:border-slate-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+            className="flex-1 py-2 border border-gray-300 dark:border-slate-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition"
           >
             Previous
           </button>
@@ -578,7 +578,7 @@ const PostBroadcast = () => {
               // Reset form if needed
               setCurrentStep(1);
             }}
-            className="flex-1 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary transition"
+            className="flex-1 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary transition"
           >
             Broadcast
           </button>
@@ -606,7 +606,7 @@ const PostBroadcast = () => {
       <SheetTrigger asChild>
         <button
           onClick={() => setIsOpen(true)}
-          className="px-4 py-2 bg-primary text-white rounded-full text-sm  3xl:text-base font-medium hover:bg-blue-600"
+          className="px-4 py-2 bg-primary text-white rounded-full text-sm  3xl:text-base font-semibold hover:bg-blue-600"
         >
           Post a broadcast
         </button>

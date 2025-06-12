@@ -12,6 +12,7 @@ import {
   FiCalendar,
   FiClock,
 } from "react-icons/fi";
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const TradingChat = () => {
   const [selectedGroup, setSelectedGroup] = useState("Trading signals");
@@ -108,13 +109,13 @@ const TradingChat = () => {
                 <div
                   key={index}
                   onClick={() => setSelectedGroup(group.name)}
-                  className={`flex items-center p-3 rounded-lg cursor-pointer transition-colors ${
+                  className={`flex items-center p-2 rounded-lg cursor-pointer transition-colors ${
                     selectedGroup === group.name
-                      ? "bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary"
+                      ? "bg-card-foreground"
                       : "hover:bg-gray-50 dark:hover:bg-gray-700"
                   }`}
                 >
-                  <div className="w-10 h-10 bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-12 h-12 bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                       {group.name[0]}
                     </span>
@@ -133,7 +134,10 @@ const TradingChat = () => {
                         {group.status}
                       </p>
                       {group.hasNotification && (
-                        <div className="w-2 h-2 bg-primary rounded-full ml-2"></div>
+                        <IoCheckmarkDoneSharp color="blue" />
+                      )}
+                      {!group.hasNotification && (
+                        <IoCheckmarkDoneSharp color="gray" />
                       )}
                     </div>
                   </div>
