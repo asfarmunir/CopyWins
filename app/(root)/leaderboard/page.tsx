@@ -23,6 +23,7 @@ const SignalProvidersLeaderboard = () => {
       ),
       value: "247",
       label: "Verified Providers",
+      img: "/verified.svg",
     },
     {
       icon: (
@@ -32,6 +33,7 @@ const SignalProvidersLeaderboard = () => {
       ),
       value: "203",
       label: "Active users",
+      img: "/active.svg",
     },
     {
       icon: (
@@ -41,6 +43,7 @@ const SignalProvidersLeaderboard = () => {
       ),
       value: "203",
       label: "Signal Sent",
+      img: "/sent.svg",
     },
     {
       icon: (
@@ -50,6 +53,7 @@ const SignalProvidersLeaderboard = () => {
       ),
       value: "203",
       label: "Avg. Win rate",
+      img: "/avg.svg",
     },
   ];
 
@@ -168,7 +172,14 @@ const SignalProvidersLeaderboard = () => {
               className="bg-card-foreground p-0.5 w-full rounded-[10px]"
             >
               <div className="bg-card rounded-[10px] border p-3 md:pr-8 2xl:pr-16 text-start">
-                <div className="flex justify-start mb-3">{stat.icon}</div>
+                {/* <div className="flex justify-start mb-3">{stat.icon}</div> */}
+                <Image
+                  src={stat.img}
+                  alt={stat.label}
+                  width={28}
+                  height={28}
+                  className="mb-3"
+                />
                 <div className="text-2xl font-bold mb-1">{stat.value}</div>
                 <div className="text-gray-500 text-sm">{stat.label}</div>
               </div>

@@ -143,7 +143,10 @@ const Sidebar = () => {
             </button>
           </div>
           <div className="  rounded-[10px] w-full bg-card-foreground border p-4 flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 2xl:w-12 h-8 2xl:h-12 text-white rounded-[8px] font-semibold bg-primary flex items-center justify-center">
+                <p>GK</p>
+              </div>
               <div>
                 <h2 className="text-sm 2xl:text-base font-semibold 3xl:text-lg">
                   Asfar Munir Asfi

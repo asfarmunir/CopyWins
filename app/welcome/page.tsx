@@ -496,7 +496,7 @@ const WelcomeSetup = () => {
                 />
                 <p
                   className="
-                bg-card
+                bg-card-foreground
                 w-fit mx-auto text-[0.8rem]      leading-loose text-[#3E4347] dark:text-white/80 2xl:text-[0.9rem] cursor-pointer px-6 font-semibold py-2 rounded-[10px] 
                 
                 "
@@ -585,14 +585,22 @@ const WelcomeSetup = () => {
 
   return (
     <div
-      className="flex min-h-svh relative w-full items-center xl:items-start justify-center gap-2 overflow-hidden p-4 md:p-6 
-        bg-gradient-to-b from-[#78A4FE] to-white dark:bg-gradient-to-b dark:from-[#04131D] dark:to-[#04131D]"
+      className="flex min-h-svh relative w-full items-center xl:items-start justify-center gap-2 overflow-hidden p-4 md:p-6 bg-card
+         dark:bg-gradient-to-b dark:from-[#04131D] dark:to-[#04131D]"
     >
       <Image
         src="/bg-dots.svg"
         alt="Background"
         fill
         className="object-cover hidden dark:block opacity-30 object-center"
+        priority
+      />
+      <Image
+        src="/mobile-top-bg.svg"
+        alt="Background"
+        width={300}
+        height={300}
+        className="object-contain w-full dark:hidden    absolute top-0  object-top"
         priority
       />
       <Link href={"/"} className="">

@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { FaRegClock } from "react-icons/fa6";
 
 const SocialTradingFeed = () => {
   const [activeTab, setActiveTab] = React.useState("All");
@@ -72,8 +73,8 @@ const SocialTradingFeed = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 2xl:gap-6">
-        <div className="lg:col-span-2 space-y-4 2xl:space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 2xl:gap-6">
+        <div className="lg:col-span-3 space-y-4 2xl:space-y-6">
           <div className="bg-card-foreground rounded-[10px] border p-4">
             <div className="flex items-center ">
               <div className="w-10 h-10 rounded-md bg-[#5EA259] flex items-center justify-center ">
@@ -89,47 +90,46 @@ const SocialTradingFeed = () => {
           </div>
 
           {Array.from({ length: 3 }, (_, index) => (
-            <div
-              key={index}
-              className="bg-card-foreground rounded-[10px] border p-4"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-md bg-[#0C9DFF] flex items-center justify-center ">
-                    <p className=" font-semibold text-white">SC</p>
-                  </div>{" "}
-                  <div>
-                    <h3 className="font-semibold text-sm mb-0.5 capitalize">
-                      sandro carossela · @UWSMC
-                    </h3>
-                    <p className="text-gray-500 text-xs">16 Dec at 6:43 pm</p>
+            <div key={index} className="bg-card rounded-[10px] border ">
+              <div className=" p-4 pb-6 bg-card-foreground">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-md bg-[#0C9DFF] flex items-center justify-center ">
+                      <p className=" font-semibold text-white">SC</p>
+                    </div>{" "}
+                    <div>
+                      <h3 className="font-semibold text-sm mb-0.5 capitalize">
+                        sandro carossela · @UWSMC
+                      </h3>
+                      <p className="text-gray-500 text-xs">16 Dec at 6:43 pm</p>
+                    </div>
+                    <span className="inline-flex items-center px-2 py-1 rounded-full bg-[#28A745] text-white text-xs font-normal">
+                      Verified
+                    </span>
                   </div>
-                  <span className="inline-flex items-center px-2 py-1 rounded-full bg-[#28A745] text-white text-xs font-normal">
-                    Verified
-                  </span>
+                  <button className="text-gray-500 hover:text-gray-700">
+                    <FiMoreHorizontal />
+                  </button>
                 </div>
-                <button className="text-gray-500 hover:text-gray-700">
-                  <FiMoreHorizontal />
-                </button>
-              </div>
 
-              <div className="mb-4">
-                <p className="text-sm">
-                  Known as "The Wolf of All Streets," Scott Melker provides
-                  regular market updates, technical analysis, and interviews
-                  with key industry figures.
-                </p>
+                <div className="mb-4">
+                  <p className="text-sm">
+                    Known as "The Wolf of All Streets," Scott Melker provides
+                    regular market updates, technical analysis, and interviews
+                    with key industry figures.
+                  </p>
+                </div>
+                <div className=" w-full h-[330px] 2xl:h-[400px] 3xl:h-[480px] rounded-[10px] bg-white">
+                  <Image
+                    src={"/authBg1.webp"}
+                    alt="featured"
+                    width={500}
+                    height={200}
+                    className="rounded-[10px] object-cover w-full h-full"
+                  />
+                </div>
               </div>
-              <div className=" w-full h-[330px] 2xl:h-[400px] 3xl:h-[480px] rounded-[10px] bg-white">
-                <Image
-                  src={"/authBg1.webp"}
-                  alt="featured"
-                  width={500}
-                  height={200}
-                  className="rounded-[10px] object-cover w-full h-full"
-                />
-              </div>
-              <div className="flex items-center justify-between border-t border-[#E3E3E4] dark:border-[#0F2430] pt-4 mt-4 mb-2">
+              <div className="flex items-center justify-between  border-[#E3E3E4] dark:border-[#0F2430] p-4 pt-6 mb-2">
                 <button className="flex items-center space-x-3 text-gray-500 hover:text-red-500 text-sm">
                   <Image
                     src={"/icons/heart.svg"}
@@ -156,7 +156,7 @@ const SocialTradingFeed = () => {
           ))}
         </div>
 
-        <div className="lg:col-span-1 space-y-4 2xl:space-y-6">
+        <div className="lg:col-span-2 space-y-4 2xl:space-y-6">
           {/* Live trade feed */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-1 bg-card-foreground rounded-full w-full p-1">
@@ -175,7 +175,7 @@ const SocialTradingFeed = () => {
               ))}
             </div>
           </div>
-          <div className="bg-card-foreground rounded-[10px] border p-4">
+          <div className="bg-card-foreground rounded-[10px] border p-2 md:p-4">
             <h2 className="2xl:text-lg font-semibold ">Livetrade feed</h2>
             <p className="text-gray-500 text-sm mb-4">
               Recent Trades From Your Subscribed Traders
@@ -201,9 +201,10 @@ const SocialTradingFeed = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div>
+                    <div className="flex flex-col  items-start md:items-end">
                       <p className="text-green-500 font-medium">+2.3%</p>
                       <p className="text-gray-500 font-medium text-xs">
+                        <FaRegClock className=" md:inline-block mr-1 hidden " />
                         +22 min ago
                       </p>
                     </div>

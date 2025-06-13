@@ -198,7 +198,7 @@ I wanted to share something that has been helping me with my trading..
         </div>
       </div>
 
-      <div className="max-w-7xl bg-card mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl w-full bg-card mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section */}
         <div className="  border-gray-200 dark:border-gray-700 p-2 md:p-6 lg:p-8 mb-8 w-full ">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8  w-full">
@@ -229,7 +229,7 @@ I wanted to share something that has been helping me with my trading..
                   height={50}
                   className=" mx-auto mb-4"
                 />
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
+                <h3 className="text-lg 2xl:text-2xl font-semibold text-gray-900 dark:text-white text-center mb-2">
                   Affiliate Rewards
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 text-center mb-4">
@@ -245,7 +245,7 @@ I wanted to share something that has been helping me with my trading..
                         <span className="text-sm text-gray-600 dark:text-gray-300">
                           {reward.referrals}
                         </span>
-                        <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                        <span className="text-sm 2xl:text-base font-semibold text-green-600 dark:text-green-400">
                           {reward.commission}
                         </span>
                       </div>
@@ -371,7 +371,7 @@ I wanted to share something that has been helping me with my trading..
               </div>
             </div>
           </div>
-          <div className="p-6">
+          <div className="py-6">
             {activeTab === "Banners" && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {banners.map((banner, index) => (

@@ -403,7 +403,7 @@ const LeadersPage = () => {
               Traders with exceptional month-over-month growth
             </p>
           </div>
-          <button className=" w-full sm:w-fit bg-card-foreground px-4 py-2 rounded-md  text-sm font-semibold">
+          <button className=" w-full sm:w-fit bg-card-foreground px-4 py-2 rounded-full  text-sm font-semibold">
             Explore rising stars
           </button>
         </div>
@@ -426,7 +426,7 @@ const LeadersPage = () => {
               Traders with exceptional long-term consistency
             </p>
           </div>
-          <button className=" w-full capitalize sm:w-fit bg-card-foreground px-4 py-2 rounded-md  text-sm font-semibold">
+          <button className=" w-full capitalize sm:w-fit bg-card-foreground px-4 py-2 rounded-full  text-sm font-semibold">
             Explore top performers
           </button>
         </div>
