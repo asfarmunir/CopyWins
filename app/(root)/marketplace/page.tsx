@@ -16,7 +16,7 @@ const Marketplace = () => {
   const [sortBy, setSortBy] = useState("Newest");
   const [showFilters, setShowFilters] = useState(false);
 
-  const categories = ["All categories", "Sports", "Trading", "Development"];
+  const categories = ["All categories", "Sports", "Trading"];
 
   const courses = [
     {
@@ -167,7 +167,7 @@ const Marketplace = () => {
           <h2 className="text-lg 2xl:text-xl font-semibold">Markerplace</h2>
         </div>
         <div className="flex items-center gap-4">
-          <div className="relative">
+          <div className="relative hidden md:block">
             <FiSearch
               className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
               size={16}
@@ -198,7 +198,7 @@ const Marketplace = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
         </div>
 
-        <div className="text-center z-10 px-4">
+        <div className="text-center z-10 px-6">
           <h2 className="text-2xl 2xl:text-3xl font-bold mb-2">
             Discover, Learn, and create with CopyWins
           </h2>
@@ -217,7 +217,7 @@ const Marketplace = () => {
               placeholder="Search for courses..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
+              className="w-full pl-12 pr-4 py-2 md:py-3 text-xs 2xl:text-sm 3xl:text-base bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
             />
           </div>
         </div>
@@ -225,7 +225,7 @@ const Marketplace = () => {
 
       {/* Marketplace Section */}
       <div className="space-y-6 mt-6 max-w-6xl w-full mx-auto">
-        <div className="flex md:items-center flex-col md:flex-row gap-4 items-start justify-between">
+        <div className="flex md:items-center  gap-4 items-start justify-between">
           <div>
             <h3 className="text-lg 2xl:text-xl font-semibold">
               All marketplace
@@ -235,7 +235,7 @@ const Marketplace = () => {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <div className="relative">
+            <div className="relative hidden md:block    ">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
