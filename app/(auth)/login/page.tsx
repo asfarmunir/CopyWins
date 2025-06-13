@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
       <div className="relative flex flex-1  w-full flex-col items-center justify-center   p-2 md:p-8 md:py-8 2xl:p-10">
-        <div className="max-h-[90svh] w-full  sm:w-fit  overflow-y-auto scroll-smooth rounded-[24px] bg-card-foreground p-4 md:p-6 xl:p-8  shadow-sm [scrollbar-width:none] ">
+        <div className="max-h-[90svh] w-full  sm:w-fit  overflow-y-auto scroll-smooth rounded-[24px] bg-card p-4 md:p-6 xl:p-8  shadow-sm [scrollbar-width:none] ">
           <Image
             src={"/logo.svg"}
             alt="logo"
@@ -110,7 +110,7 @@ const Login = () => {
                         <Input
                           placeholder="Enter your email"
                           {...field}
-                          className="mr-0 w-full rounded-[10px] border dark:bg-[#04131D] border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px] bg-[#F5F5F5] px-3 py-3 leading-tight text-[#3E4347] "
+                          className="mr-0 w-full bg-card-foreground rounded-[10px] border  border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px]  px-3 py-3 leading-tight text-[#3E4347] "
                         />
                       </FormControl>
                       <FormMessage />
@@ -131,7 +131,7 @@ const Login = () => {
                             placeholder="Enter your password"
                             type={showPass ? "text" : "password"}
                             {...field}
-                            className="mr-0 w-full rounded-[10px] border dark:bg-[#04131D] border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px] bg-[#F5F5F5] px-3 py-3 leading-tight text-[#3E4347] "
+                            className="mr-0 w-full bg-card-foreground rounded-[10px] border  border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px]  px-3 py-3 leading-tight text-[#3E4347] "
                           />
                           <button
                             type="button"
@@ -161,8 +161,8 @@ const Login = () => {
                     </label>
                   </div>
 
-                  <div className="text-sm text-primary font-normal">
-                    <Link href="/reset-password" className="font-medium ">
+                  <div className="text-sm text-primary font-medium">
+                    <Link href="/reset-password" className=" ">
                       Forgot password?
                     </Link>
                   </div>
@@ -174,7 +174,7 @@ const Login = () => {
                   </p>
                 )}
 
-                <div className="mt-5 flex w-full flex-col items-center justify-center">
+                <div className="mt-6 flex w-full flex-col items-center justify-center">
                   <Button
                     type="submit"
                     className="focus:shadow-outline mb-4 py-3.5 w-full rounded-full border  font-normal text-white focus:outline-none  "
@@ -182,10 +182,10 @@ const Login = () => {
                     {isLoading ? (
                       <Loader className="h-5 w-5 animate-spin text-white" />
                     ) : (
-                      <span className="capitalize">Sign In</span>
+                      <span className="capitalize font-semibold">Sign In</span>
                     )}
                   </Button>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center mt-2 gap-2">
                     <h2 className="text-sm font-semibold text-[#3E4347] dark:text-white/80">
                       New to CopyWins?{" "}
                     </h2>
@@ -212,43 +212,6 @@ const Login = () => {
           width={400}
           height={400}
         />
-        <div className="absolute bottom-14">
-          {/* <Carousel orientation="horizontal">
-            <CarouselContent className="w-[320px] 2xl:w-[400px]">
-              <CarouselItem>
-                <Image
-                  src="/vintage/images/feature1.svg"
-                  alt="feature"
-                  width={100}
-                  className="w-full"
-                  height={100}
-                />
-              </CarouselItem>
-              <CarouselItem>
-                {" "}
-                <Image
-                  src="/vintage/images/feature2.svg"
-                  alt="feature"
-                  width={100}
-                  className="w-full"
-                  height={100}
-                />
-              </CarouselItem>
-              <CarouselItem>
-                {" "}
-                <Image
-                  src="/vintage/images/feature3.svg"
-                  alt="feature"
-                  width={100}
-                  className="w-full"
-                  height={100}
-                />
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className=" " />
-            <CarouselNext />
-          </Carousel> */}
-        </div>
       </div>
     </div>
   );

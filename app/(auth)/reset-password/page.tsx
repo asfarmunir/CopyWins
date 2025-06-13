@@ -63,24 +63,26 @@ const Login = () => {
 
   return (
     <div className="flex h-screen w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
+      <div className=" absolute top-6 xl:top-8 left-8">
+        <Image
+          src={"/logo.svg"}
+          alt="logo"
+          className="mb-4 mx-auto dark:hidden "
+          width={140}
+          height={140}
+        />
+        <Image
+          src={"/logo-dark.svg"}
+          alt="logo"
+          className="mb-4 mx-auto dark:block hidden "
+          width={140}
+          height={140}
+        />
+      </div>
       <div className="relative flex flex-1  w-full flex-col items-center justify-center   p-2 md:p-8 md:py-8 2xl:p-10">
-        <div className="max-h-[90svh] w-full  sm:w-fit  overflow-y-auto scroll-smooth rounded-[24px] bg-card-foreground p-4 md:p-6 xl:p-8  shadow-sm [scrollbar-width:none] ">
-          <Image
-            src={"/logo.svg"}
-            alt="logo"
-            className="mb-4 mx-auto dark:hidden "
-            width={130}
-            height={130}
-          />
-          <Image
-            src={"/logo-dark.svg"}
-            alt="logo"
-            className="mb-4 mx-auto dark:block hidden "
-            width={130}
-            height={130}
-          />
+        <div className="max-h-[90svh] w-full   sm:w-fit  overflow-y-auto scroll-smooth rounded-[24px] bg-card p-4 md:p-6 xl:p-8  shadow-sm [scrollbar-width:none] ">
           <h2 className=" text-xl font-bold text-vintage-50 xl:text-2xl">
-            Forget Password
+            Forget Password?
           </h2>
           <p className="max-w-md text-[0.8rem] font-light leading-loose text-[#3E4347] dark:text-white/80 2xl:text-[0.9rem]">
             Please enter your email here.
@@ -105,7 +107,7 @@ const Login = () => {
                         <Input
                           placeholder="Enter your email"
                           {...field}
-                          className="mr-0 w-full rounded-[10px] border dark:bg-[#04131D] border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px] bg-[#F5F5F5] px-3 py-3 leading-tight text-[#3E4347] "
+                          className="mr-0 w-full rounded-[10px] border bg-card-foreground border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px]  px-3 py-3 leading-tight text-[#3E4347] "
                         />
                       </FormControl>
                       <FormMessage />
