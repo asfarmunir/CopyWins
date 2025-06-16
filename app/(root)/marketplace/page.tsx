@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaUserGroup } from "react-icons/fa6";
 import {
@@ -217,7 +218,7 @@ const Marketplace = () => {
               placeholder="Search for courses..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-2 md:py-3 text-xs 2xl:text-sm 3xl:text-base bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
+              className="w-full pl-12 pr-4 py-2 md:py-3 text-xs 2xl:text-sm 3xl:text-base bg-[#28303F99] backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
             />
           </div>
         </div>
@@ -281,7 +282,9 @@ const Marketplace = () => {
         {/* Course Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCourses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+            <Link href={`/marketplace/courseDetail`} key={course.id}>
+              <CourseCard course={course} />
+            </Link>
           ))}
         </div>
 

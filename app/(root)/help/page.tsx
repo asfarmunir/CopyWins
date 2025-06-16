@@ -104,7 +104,7 @@ const Help = () => {
               placeholder="Search for answers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-[90%] md:w-full pl-12 pr-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
+              className="w-full pl-12 pr-4 py-2 md:py-3 text-xs 2xl:text-sm 3xl:text-base bg-[#28303F99] backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/30"
             />
           </div>
         </div>

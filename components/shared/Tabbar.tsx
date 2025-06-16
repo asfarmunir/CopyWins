@@ -185,7 +185,7 @@ const Tabbar = () => {
                       Asfar Munir Asfi
                     </h2>
                     <p className="text-xs 2xl:text-sm  3xl:text-base">
-                      asfarma2815@gmail.com
+                      Zaeem@proppicks.com
                     </p>
                   </div>
                 </div>
