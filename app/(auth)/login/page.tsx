@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { createRef, useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,15 +18,71 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Eye, EyeClosed, Loader } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { motion, AnimatePresence } from "framer-motion";
 
 const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
   }),
   password: z.string().min(6, {
-    message: "Password should be atleast 6 characters",
+    message: "Password should be at least 6 characters",
   }),
 });
+
+const carouselItems = [
+  {
+    src: "/authBg1.svg",
+    alt: "signup1",
+    text: (
+      <>
+        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
+          Introducing CopyWins.
+        </h3>
+        <p className="text-sm 2xl:text-base font-semibold text-white">
+          Start turning your skills into income today.
+        </p>
+        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
+          Providers earn $6,500 per month on average.
+        </p>
+      </>
+    ),
+  },
+  {
+    src: "/authBg3.svg",
+    alt: "signup3",
+    text: (
+      <>
+        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
+          Sport Pick Signals
+        </h3>
+        <p className="text-sm 2xl:text-base font-semibold text-white">
+          Get winning sports picks, straight to your feed.
+        </p>
+        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
+          Real signals, real results.
+        </p>
+      </>
+    ),
+  },
+  {
+    src: "/authBg2.svg",
+    alt: "signup2",
+    text: (
+      <>
+        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
+          Copy The Best Trading Signals
+        </h3>
+        <p className="text-sm 2xl:text-base font-semibold text-white">
+          <span className="text-[#55FEFF]">
+            Copy the best Trading signals from{" "}
+          </span>
+          top-performing traders and take <br />
+          your trading to the next level.
+        </p>
+      </>
+    ),
+  },
+];
 
 const Login = () => {
   const form = useForm({
@@ -41,54 +97,45 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [AuthError, setAuthError] = useState("");
-  interface value {
-    email: string;
-    password: string;
-  }
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const router = useRouter();
-  async function onSubmit(values: value) {
+
+  async function onSubmit(values) {
     setIsLoading(true);
-
-    // const result = await signIn("credentials", {
-    //   redirect: false,
-    //   email: values.email,
-    //   password: values.password,
-    // });
-    // console.log("🚀 ~ onSubmit ~ result:", result);
-    // if (result?.status !== 200) {
-    //   setToggle(true);
-
-    //   setAuthError("Incorrect credentials please try again!");
-    // } else {
-    //   router.push("/");
-    //   setAuthError("");
-    //   setToggle(false);
-    // }
     setIsLoading(false);
   }
 
+  // Automatic slide transition
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
+    }, 5000); // Change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="flex h-screen w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
-      <div className="relative flex flex-1  w-full flex-col items-center justify-center   p-2 md:p-8 md:py-8 2xl:p-10">
-        <div className="max-h-[90svh] w-full  sm:w-fit  overflow-y-auto scroll-smooth rounded-[24px] bg-card p-4 md:p-6 xl:p-8  shadow-sm [scrollbar-width:none] ">
+    <div className="flex h-screen w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6">
+      <div className="relative flex flex-1 w-full flex-col items-center justify-center p-2 md:p-8 md:py-8 2xl:p-10">
+        <div className="max-h-[90svh] w-full sm:w-fit overflow-y-auto scroll-smooth rounded-[24px] bg-card p-4 md:p-6 xl:p-8 shadow-sm [scrollbar-width:none]">
           <Image
             src={"/logo.svg"}
             alt="logo"
-            className="mb-4 mx-auto dark:hidden "
+            className="mb-4 mx-auto dark:hidden"
             width={130}
             height={130}
           />
           <Image
             src={"/logo-dark.svg"}
             alt="logo"
-            className="mb-4 mx-auto dark:block hidden "
+            className="mb-4 mx-auto dark:block hidden"
             width={130}
             height={130}
           />
-          <h2 className=" text-xl font-bold text-vintage-50 xl:text-2xl">
+          <h2 className="text-xl font-bold text-vintage-50 xl:text-2xl">
             Sign In
           </h2>
-          <p className="max-w-md text-[0.8rem] font-light leading-loose text-[#3E4347] dark:text-white/80 2xl:text-[0.9rem]">
+          <p className="max-w-md text-[0.8rem] font-light leading-loose text-[#3E4347] dark:text-white 2xl:text-[0.9rem]">
             Start copying successful people.
           </p>
 
@@ -103,14 +150,14 @@ const Login = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem className="mb-4 w-full">
-                      <FormLabel className=" block w-fit text-[0.7rem]  font-semibold 2xl:text-[0.75rem]">
+                      <FormLabel className="block w-fit text-[0.7rem] font-semibold 2xl:text-[0.75rem]">
                         Email
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
                           {...field}
-                          className="mr-0 w-full bg-card-foreground rounded-[10px] border  border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px]  px-3 py-3 leading-tight text-[#3E4347] "
+                          className="mr-0 w-full bg-card-foreground rounded-[10px] border border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px] px-3 py-3 leading-tight text-[#3E4347]"
                         />
                       </FormControl>
                       <FormMessage />
@@ -122,16 +169,16 @@ const Login = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem className="mb-4 w-full">
-                      <FormLabel className=" block w-fit text-[0.7rem]  font-semibold 2xl:text-[0.75rem]">
+                      <FormLabel className="block w-fit text-[0.7rem] font-semibold 2xl:text-[0.75rem]">
                         Password
                       </FormLabel>
-                      <FormControl className=" ">
-                        <div className=" relative">
+                      <FormControl className="">
+                        <div className="relative">
                           <Input
                             placeholder="Enter your password"
                             type={showPass ? "text" : "password"}
                             {...field}
-                            className="mr-0 w-full bg-card-foreground rounded-[10px] border  border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px]  px-3 py-3 leading-tight text-[#3E4347] "
+                            className="mr-0 w-full bg-card-foreground rounded-[10px] border border-[#001E451A] xl:min-w-[350px] 2xl:min-w-[400px] px-3 py-3 leading-tight text-[#3E4347]"
                           />
                           <button
                             type="button"
@@ -152,17 +199,17 @@ const Login = () => {
                 />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <Checkbox className=" rounded-full" id="remember-me" />
+                    <Checkbox className="rounded-full" id="remember-me" />
                     <label
                       htmlFor="remember-me"
-                      className="ml-2 block font-normal cursor-pointer  text-sm "
+                      className="ml-2 block font-normal cursor-pointer text-sm"
                     >
                       Remember me
                     </label>
                   </div>
 
                   <div className="text-sm text-primary font-medium">
-                    <Link href="/reset-password" className=" ">
+                    <Link href="/reset-password" className="">
                       Forgot password?
                     </Link>
                   </div>
@@ -177,7 +224,7 @@ const Login = () => {
                 <div className="mt-6 flex w-full flex-col items-center justify-center">
                   <Button
                     type="submit"
-                    className="focus:shadow-outline mb-4 py-3.5 w-full rounded-full border  font-normal text-white focus:outline-none  "
+                    className="focus:shadow-outline mb-4 py-3.5 w-full rounded-full border font-normal text-white focus:outline-none"
                   >
                     {isLoading ? (
                       <Loader className="h-5 w-5 animate-spin text-white" />
@@ -186,7 +233,7 @@ const Login = () => {
                     )}
                   </Button>
                   <div className="flex items-center mt-2 gap-2">
-                    <h2 className="text-sm font-semibold text-[#3E4347] dark:text-white/80">
+                    <h2 className="text-sm font-semibold text-[#3E4347] dark:text-white">
                       New to CopyWins?{" "}
                     </h2>
                     <Link
@@ -204,14 +251,41 @@ const Login = () => {
           </Form>
         </div>
       </div>
-      <div className="relative hidden h-full flex-1 w-full flex-col  items-center justify-center overflow-hidden rounded-xl object-cover object-center md:flex">
-        <Image
-          src={"/authBg1.webp"}
-          alt="signup"
-          className="h-full w-full object-contain object-center"
-          width={400}
-          height={400}
-        />
+      <div className="relative hidden h-full flex-1 w-full flex-col items-center justify-center overflow-hidden rounded-xl md:flex">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={carouselItems[currentSlide].src}
+              alt={carouselItems[currentSlide].alt}
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute bottom-28 left-0 right-0 flex flex-col items-center text-center gap-2 px-4">
+              {carouselItems[currentSlide].text}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Carousel indicators */}
+        <div className="absolute bottom-20 left-0 right-0 flex justify-center gap-2">
+          {carouselItems.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentSlide === index ? "w-6 bg-white" : "w-2 bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

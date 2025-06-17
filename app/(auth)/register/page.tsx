@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { createRef, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,7 +18,64 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Eye, EyeClosed, Loader } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { FaArrowLeft } from "react-icons/fa6";
+
+const carouselItems = [
+  {
+    src: "/authBg1.svg",
+    alt: "signup1",
+    text: (
+      <>
+        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
+          Introducing CopyWins.
+        </h3>
+        <p className="text-sm 2xl:text-base font-semibold text-white">
+          Start turning your skills into income today.
+        </p>
+        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
+          Providers earn $6,500 per month on average.
+        </p>
+      </>
+    ),
+  },
+  {
+    src: "/authBg3.svg",
+    alt: "signup3",
+    text: (
+      <>
+        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
+          Sport Pick Signals
+        </h3>
+        <p className="text-sm 2xl:text-base font-semibold text-white">
+          Get winning sports picks, straight to your feed.
+        </p>
+        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
+          Real signals, real results.
+        </p>
+      </>
+    ),
+  },
+  {
+    src: "/authBg2.svg",
+    alt: "signup2",
+    text: (
+      <>
+        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
+          Copy The Best Trading Signals
+        </h3>
+        <p className="text-sm 2xl:text-base font-semibold text-white">
+          <span className="text-[#55FEFF]">
+            Copy the best Trading signals from{" "}
+          </span>
+          top-performing traders and take <br />
+          your trading to the next level.
+        </p>
+      </>
+    ),
+  },
+];
 
 const formSchema = z.object({
   email: z.string().email({
@@ -40,7 +97,7 @@ const Register = () => {
       password: "",
     },
   });
-
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [AuthError, setAuthError] = useState("");
@@ -54,6 +111,13 @@ const Register = () => {
 
     setIsLoading(false);
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
+    }, 5000); // Change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="flex h-screen w-full  items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
@@ -235,14 +299,41 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="relative hidden h-full flex-1 w-full flex-col  items-center justify-center overflow-hidden rounded-xl object-cover object-center md:flex">
-        <Image
-          src={"/authBg1.webp"}
-          alt="signup"
-          className="h-full w-full object-contain object-center"
-          width={400}
-          height={400}
-        />
+      <div className="relative hidden h-full flex-1 w-full flex-col items-center justify-center overflow-hidden rounded-xl md:flex">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={carouselItems[currentSlide].src}
+              alt={carouselItems[currentSlide].alt}
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute bottom-28 left-0 right-0 flex flex-col items-center text-center gap-2 px-4">
+              {carouselItems[currentSlide].text}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Carousel indicators */}
+        <div className="absolute bottom-20 left-0 right-0 flex justify-center gap-2">
+          {carouselItems.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentSlide === index ? "w-6 bg-white" : "w-2 bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

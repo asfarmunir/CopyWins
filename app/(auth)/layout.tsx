@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div
       className={`relative 
       bg-card
-        md:bg-gradient-to-b from-[#78A4FE] to-white dark:bg-gradient-to-b dark:from-[#04131D] dark:to-[#04131D]
+         dark:bg-gradient-to-b dark:from-[#04131D] dark:to-[#04131D]
         max-h-svh w-full overflow-y-hidden`}
     >
       <Image
@@ -25,7 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         alt="Background"
         width={300}
         height={300}
-        className="object-contain sm:hidden w-full dark:hidden    absolute top-0  object-top"
+        className="object-contain  w-full dark:hidden    absolute top-0  object-top"
         priority
       />
       <Image

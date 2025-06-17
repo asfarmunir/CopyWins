@@ -156,7 +156,7 @@ const Sidebar = () => {
                 </p>
               </div>
             </div>
-            <button>
+            <Link href={"/login"}>
               <Image
                 src={"/icons/logout.svg"}
                 alt="icon"
@@ -165,7 +165,7 @@ const Sidebar = () => {
                 height={16}
                 priority
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
