@@ -18,7 +18,7 @@ const WithdrawMoneyModal = () => {
       <SheetTrigger asChild>
         <button
           onClick={() => setIsOpen(true)}
-          className=" border rounded-full px-2 md:px-4 py-2 bg-card-foreground font-semibold  dark:hover:text-white text-xs md:text-sm"
+          className=" border rounded-full px-2 md:px-4 py-2 bg-card-foreground font-semibold  dark:hover:text-white text-[10px] md:text-sm"
         >
           Withdrawal Status
         </button>

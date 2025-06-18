@@ -358,84 +358,82 @@ const LeadersPage = () => {
         </div>
       </div>
 
-      {/* Explore Traders Section */}
-      <div className="space-y-4 p-4 2xl:px-9">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-3">
-            <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
-            <p className="text-gray-500 dark:text-gray-200 text-sm">
-              Discover top-performing traders to follow and copy their trades
-            </p>
+      <div className=" w-full  mx-auto max-w-6xl">
+        <div className="space-y-4 px-4 ">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-3">
+              <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
+              <p className="text-gray-500 dark:text-gray-200 text-sm">
+                Discover top-performing traders to follow and copy their trades
+              </p>
+            </div>
+            <div className="flex items-center  w-full md:w-fit space-x-1 bg-card-foreground rounded-full p-1">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 2xl:w-24 flex-1 py-2 rounded-full text-sm font-medium transition ${
+                    activeTab === tab
+                      ? "bg-card text-foreground shadow-sm"
+                      : "text-gray-500 dark:text-gray-200 hover:text-foreground"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex items-center  w-full md:w-fit space-x-1 bg-card-foreground rounded-full p-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 2xl:w-24 flex-1 py-2 rounded-full text-sm font-medium transition ${
-                  activeTab === tab
-                    ? "bg-card text-foreground shadow-sm"
-                    : "text-gray-500 dark:text-gray-200 hover:text-foreground"
-                }`}
-              >
-                {tab}
-              </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6">
+            {exploreTraders.map((trader, index) => (
+              //@ts-ignore
+              <TraderCard key={index} {...trader} />
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6">
-          {exploreTraders.map((trader, index) => (
-            //@ts-ignore
-            <TraderCard key={index} {...trader} />
-          ))}
-        </div>
-      </div>
-
-      {/* Monthly Rising Stars Section */}
-      <div className="space-y-4 p-4 2xl:px-9">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-3">
-            <h2 className="2xl:text-lg font-semibold">
-              Explore Traders Monthly Rising Stars
-            </h2>
-            <p className="text-gray-500 dark:text-gray-200 text-sm">
-              Traders with exceptional month-over-month growth
-            </p>
+        <div className="space-y-4 p-4 2xl:px-9">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-3">
+              <h2 className="2xl:text-lg font-semibold">
+                Explore Traders Monthly Rising Stars
+              </h2>
+              <p className="text-gray-500 dark:text-gray-200 text-sm">
+                Traders with exceptional month-over-month growth
+              </p>
+            </div>
+            <button className=" w-full sm:w-fit bg-card-foreground px-4 py-2 rounded-full  text-sm font-semibold">
+              Explore rising stars
+            </button>
           </div>
-          <button className=" w-full sm:w-fit bg-card-foreground px-4 py-2 rounded-full  text-sm font-semibold">
-            Explore rising stars
-          </button>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6">
-          {risingStars.map((trader, index) => (
-            //@ts-ignore
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6">
+            {risingStars.map((trader, index) => (
+              //@ts-ignore
 
-            <TraderCard key={index} {...trader} showMonthlyOnly={true} />
-          ))}
-        </div>
-      </div>
-
-      {/* Top Performing 1 Year Section */}
-      <div className="space-y-4 p-4 2xl:px-9">
-        <div className="flex  flex-col md:flex-row items-center justify-between">
-          <div className="mb-3">
-            <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
-            <p className="text-gray-500 dark:text-gray-200 text-sm">
-              Traders with exceptional long-term consistency
-            </p>
+              <TraderCard key={index} {...trader} showMonthlyOnly={true} />
+            ))}
           </div>
-          <button className=" w-full capitalize sm:w-fit bg-card-foreground px-4 py-2 rounded-full  text-sm font-semibold">
-            Explore top performers
-          </button>
         </div>
+        <div className="space-y-4 p-4 2xl:px-9">
+          <div className="flex  flex-col md:flex-row items-center justify-between">
+            <div className="mb-3">
+              <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
+              <p className="text-gray-500 dark:text-gray-200 text-sm">
+                Traders with exceptional long-term consistency
+              </p>
+            </div>
+            <button className=" w-full capitalize sm:w-fit bg-card-foreground px-4 py-2 rounded-full  text-sm font-semibold">
+              Explore top performers
+            </button>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6">
-          {topPerformers.map((trader, index) => (
-            //@ts-ignore
-            <TraderCard key={index} {...trader} />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6">
+            {topPerformers.map((trader, index) => (
+              //@ts-ignore
+              <TraderCard key={index} {...trader} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

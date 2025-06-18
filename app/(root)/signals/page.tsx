@@ -362,9 +362,9 @@ const SignalsPage = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl w-full mx-auto">
         {/* Left Column - Statistics and Upcoming Signals */}
-        <div className="xl:col-span-2 space-y-6">
+        <div className="md:col-span-3 space-y-6">
           {/* Signal Statistics */}
           <div className="space-y-4">
             <div>
@@ -414,7 +414,7 @@ const SignalsPage = () => {
         </div>
 
         {/* Right Column - Top Performing Signals */}
-        <div className="space-y-4">
+        <div className="space-y-4 md:col-span-2 ">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-1 bg-card-foreground rounded-full w-full p-1">
               {tabs.map((tab) => (
@@ -433,7 +433,7 @@ const SignalsPage = () => {
             </div>
           </div>
 
-          <div className="bg-card-foreground rounded-[10px] border p-4 2xl:p-6">
+          <div className="bg-card-foreground rounded-[10px] border p-3 2xl:p-4">
             <div>
               <h2 className="text-lg font-semibold mb-1">
                 Top Performing signals

@@ -69,7 +69,7 @@ const BroadcastPage = () => {
         </div>
       </div>
 
-      <div className=" w-full  space-y-6 max-w-5xl py-4 mx-auto">
+      <div className=" w-full  space-y-6 max-w-6xl py-4 mx-auto">
         {/* Follower Statistics */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">

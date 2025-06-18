@@ -89,15 +89,17 @@ const SignalProviderDashboard = () => {
             width={30}
             height={30}
             priority
-            className="md:hidden"
+            className="md:hidden
+            w-[26px] h-[26px] md:w-[30px] md:h-[30px] 
+            "
           />
-          <h1 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+          <h1 className="text-base md:text-xl font-semibold text-gray-900 dark:text-white">
             Signal provider
           </h1>{" "}
         </div>
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-1 md:gap-4">
           <Link href={"/signals/dashboard/manage-codes"}>
-            <button className="px-2 md:px-4 py-2 md:text-sm text-xs font-semibold text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <button className="px-2  md:px-4 py-2 md:text-sm text-[10px] font-semibold text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
               Create a discount
             </button>
           </Link>
@@ -108,7 +110,7 @@ const SignalProviderDashboard = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl md:mx-auto">
+      <div className="max-w-6xl  w-full md:mx-auto">
         {/* Total Statistics Section */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
