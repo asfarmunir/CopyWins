@@ -41,7 +41,7 @@ const SubscriptionProfilePage = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-3 md:p-6">
+      <div className="max-w-6xl 3xl:max-w-7xl mx-auto p-3 md:p-6">
         {/* Provider Header */}
         <div className="bg-card-foreground rounded-lg border border-gray-200 dark:border-gray-700 p-2 mb-6">
           <div className="flex items-start flex-col md:flex-row justify-between px-2 md:px-4 pt-4">

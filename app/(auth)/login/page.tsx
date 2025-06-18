@@ -255,7 +255,14 @@ const Login = () => {
           </Form>
         </div>
       </div>
-      <div className="relative hidden h-full flex-1 w-full flex-col items-center justify-center overflow-hidden rounded-xl md:flex">
+      <div
+        className="relative hidden h-full flex-1 w-full flex-col items-center justify-center overflow-hidden rounded-xl md:flex"
+        style={{
+          backgroundImage: `url('/mainbg.svg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -263,13 +270,17 @@ const Login = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0"
+            className="flex  flex-col"
           >
             <Image
-              src={carouselItems[currentSlide].src}
+              src={`/${currentSlide + 1}.svg`}
               alt={carouselItems[currentSlide].alt}
-              fill
-              className="object-cover object-center"
+              width={500}
+              height={500}
+              className={`
+                w-[550px] h-[550px] 2xl:h-[700px] 2xl:w-[700px] 3xl:w-[830px] 3xl:h-[830px] 
+                ${currentSlide === 0 ? "mb-32 2xl:mb-40" : "mb-24"}
+                `}
               priority
             />
             <div className="absolute  bottom-16 2xl:bottom-28 left-0 right-0 flex flex-col items-center text-center gap-2 px-4">

@@ -73,7 +73,7 @@ const SocialTradingFeed = () => {
         </div>
       </div>
 
-      <div className=" w-full  flex flex-col gap-2 2xl:gap-4 max-w-6xl mx-auto">
+      <div className=" w-full  flex flex-col gap-2 2xl:gap-4 max-w-6xl 3xl:max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 2xl:gap-6">
           <div className="lg:col-span-3 space-y-4 2xl:space-y-6">
             <div className="bg-card-foreground rounded-[10px] border p-4">

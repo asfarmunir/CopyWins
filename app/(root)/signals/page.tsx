@@ -362,7 +362,7 @@ const SignalsPage = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl w-full mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl 3xl:max-w-7xl w-full mx-auto">
         {/* Left Column - Statistics and Upcoming Signals */}
         <div className="md:col-span-3 space-y-6">
           {/* Signal Statistics */}

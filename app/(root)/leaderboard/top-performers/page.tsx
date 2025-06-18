@@ -163,7 +163,7 @@ const TopPerformersPage = () => {
       </div>
 
       {/* Title and Description */}
-      <div className="flex items-center justify-between mb-8 mt-4 max-w-6xl w-full mx-auto">
+      <div className="flex items-center justify-between mb-8 mt-4 max-w-6xl 3xl:max-w-7xl w-full mx-auto">
         <div className="">
           <h1 className="text-xl 2xl:text-2xl font-semibold mb-2">
             Top performing signal providers
@@ -180,7 +180,7 @@ const TopPerformersPage = () => {
       </div>
 
       {/* Table */}
-      <div className="space-y-1 bg-card-foreground rounded-[10px] border p-1 max-w-6xl w-full mx-auto">
+      <div className="space-y-1 bg-card-foreground rounded-[10px] border p-1 max-w-6xl 3xl:max-w-7xl w-full mx-auto">
         {performers.map((performer, index) => (
           <div
             key={index}

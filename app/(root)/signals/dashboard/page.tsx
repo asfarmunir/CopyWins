@@ -110,7 +110,7 @@ const SignalProviderDashboard = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl  w-full md:mx-auto">
+      <div className="max-w-6xl 3xl:max-w-7xl  w-full md:mx-auto">
         {/* Total Statistics Section */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">

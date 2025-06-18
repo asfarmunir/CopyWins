@@ -85,7 +85,7 @@ const MySubscriptionsPage = () => {
       </div>
 
       {/* Signal Providers Section */}
-      <div className="mb-6 mt-2 max-w-6xl mx-auto ">
+      <div className="mb-6 mt-2 max-w-6xl 3xl:max-w-7xl mx-auto ">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-lg 2xl:text-xl font-semibold mb-1">

@@ -187,7 +187,7 @@ const Marketplace = () => {
 
       {/* Hero Section */}
       <div
-        className="relative max-w-6xl w-full mx-auto h-52 2xl:h-64 bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 rounded-[10px] flex flex-col items-center justify-center text-white overflow-hidden"
+        className="relative max-w-6xl 3xl:max-w-7xl w-full mx-auto h-52 2xl:h-64 bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 rounded-[10px] flex flex-col items-center justify-center text-white overflow-hidden"
         style={{
           backgroundImage: "url('/help_bg.svg')",
           backgroundSize: "cover",
@@ -225,7 +225,7 @@ const Marketplace = () => {
       </div>
 
       {/* Marketplace Section */}
-      <div className="space-y-6 mt-6 max-w-6xl w-full mx-auto">
+      <div className="space-y-6 mt-6 max-w-6xl 3xl:max-w-7xl w-full mx-auto">
         <div className="flex md:items-center  gap-4 items-start justify-between">
           <div>
             <h3 className="text-lg 2xl:text-xl font-semibold">
@@ -298,7 +298,7 @@ const Marketplace = () => {
 
       {/* Call to Action Section */}
       <div
-        className="relative max-w-6xl w-full mx-auto  bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 rounded-[10px] flex flex-col items-center justify-center text-white overflow-hidden mt-8"
+        className="relative max-w-6xl 3xl:max-w-7xl w-full mx-auto  bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 rounded-[10px] flex flex-col items-center justify-center text-white overflow-hidden mt-8"
         style={{
           backgroundImage: "url('/help_bg.svg')",
           backgroundSize: "cover",
@@ -328,7 +328,7 @@ const Marketplace = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-1 max-w-6xl w-full mx-auto bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-[10px] p-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-1 max-w-6xl 3xl:max-w-7xl w-full mx-auto bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-[10px] p-2">
           <div className="text-center bg-[#28303F99] rounded-lg w-full py-8">
             <h4 className="text-2xl text-white 2xl:text-3xl font-bold text-foreground mb-2">
               10,000+
