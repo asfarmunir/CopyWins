@@ -101,9 +101,10 @@ const Login = () => {
 
   const router = useRouter();
 
-  async function onSubmit(values) {
+  async function onSubmit(values: any) {
     setIsLoading(true);
     setIsLoading(false);
+    router.push("/");
   }
 
   // Automatic slide transition

@@ -8,13 +8,18 @@ import {
   FiUsers,
   FiClock,
   FiPlay,
-  FiCheck,
   FiSmartphone,
   FiMonitor,
   FiAward,
   FiShare2,
+  FiFacebook,
 } from "react-icons/fi";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { RiTwitterXLine } from "react-icons/ri";
+
 import { FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
+import { LucideLinkedin } from "lucide-react";
 
 const CourseDetail = () => {
   const [expandedSection, setExpandedSection] = useState("build-website");
@@ -42,7 +47,7 @@ const CourseDetail = () => {
     includes: [
       { icon: FiClock, text: "42 hours on-demand video" },
       { icon: FiAward, text: "Certificate of completion" },
-      { icon: FiCheck, text: "Full lifetime access" },
+      { icon: IoIosCheckmarkCircleOutline, text: "Full lifetime access" },
       { icon: FiSmartphone, text: "Access on mobile and TV" },
       { icon: FiPlay, text: "25 coding exercises" },
     ],
@@ -75,7 +80,7 @@ const CourseDetail = () => {
   };
 
   return (
-    <div className="w-full bg-card h-full rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
+    <div className="w-full bg-card  rounded-[10px] border flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 3xl:p-5">
       {/* Header with Breadcrumb */}
       <div className="w-full flex items-center justify-between border-b border-[#E3E3E4] dark:border-[#0F2430] pb-4">
         <div className="flex items-center gap-2">
@@ -151,6 +156,10 @@ const CourseDetail = () => {
               </div>
             </div>
 
+            <div className=" w-full h-48 xl:h-96 bg-card rounded-[20px] ">
+              {" "}
+            </div>
+
             {/* Instructor Info */}
             <div className="flex items-center gap-3 py-4">
               {/* <Image
@@ -160,7 +169,7 @@ const CourseDetail = () => {
                 height={50}
                 className="rounded-full bg-card"
               /> */}
-              <div className="relative w-12 h-12 rounded-full bg-card overflow-hidden">
+              <div className="relative w-12 h-12 rounded-full bg-card border overflow-hidden">
                 {/* <Image
                   src={courseData.instructor.avatar}
                   alt={courseData.instructor.name}
@@ -180,7 +189,7 @@ const CourseDetail = () => {
                   </p>
                 </div>
                 <div className="flex items-center gap-1 mt-1 bg-yellow-50 dark:bg-yellow-800/70 px-2 py-1 rounded-full text-sm font-medium">
-                  <span className="text-yellow-500">★</span>
+                  <FaStar className="inline-block text-yellow-500" size={14} />
                   <span className="text-sm font-medium">
                     {courseData.instructor.rating}
                   </span>
@@ -235,46 +244,45 @@ const CourseDetail = () => {
         </div>
 
         {/* Right Column - Purchase Card */}
-        <div className="lg:col-span-1">
-          <div className="bg-card-foreground rounded-[10px] border p-4 sticky top-4">
-            {/* Course Type */}
-            <div className="mb-4">
-              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                Full course
-              </span>
-            </div>
+        <div className="lg:col-span-1  ">
+          <div className="bg-card-foreground p-1 rounded-[10px]">
+            <div className="bg-card rounded-[10px] border p-4 mb-1 ">
+              {/* Course Type */}
+              <div className="mb-3.5">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  Full course
+                </span>
+              </div>
 
-            {/* Pricing */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl font-bold">
-                {courseData.pricing.current}
-              </span>
-              <span className="text-lg text-gray-500 line-through">
-                {courseData.pricing.original}
-              </span>
-              <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-sm font-medium">
-                {courseData.pricing.discount}
-              </span>
-            </div>
+              {/* Pricing */}
+              <div className="flex items-center justify-between gap-2 mb-3.5">
+                <p>
+                  <span className="text-3xl 2xl:text-4xl font-bold">
+                    {courseData.pricing.current}
+                  </span>
+                  <span className="text-xl 2xl:text-2xl text-gray-500 line-through">
+                    {courseData.pricing.original}
+                  </span>
+                </p>
+                <span className="bg-green-600 dark:bg-green-900 text-white dark:text-green-200 px-2 py-1 rounded-full text-sm font-semibold">
+                  {courseData.pricing.discount}
+                </span>
+              </div>
 
-            {/* Sale Timer */}
-            <div className="flex items-center gap-1 mb-6 text-sm text-gray-600 dark:text-gray-400">
-              <FiClock size={14} />
-              <span>Sale ends in {courseData.pricing.saleEnds}</span>
+              {/* Sale Timer */}
+              <div className="flex items-center gap-1  text-sm text-gray-600 dark:text-gray-400">
+                <FiClock size={19} />
+                <span>Sale ends in {courseData.pricing.saleEnds}</span>
+              </div>
             </div>
 
             {/* Course Includes */}
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4 mb-1 bg-card rounded-[10px] border p-4">
               <h3 className="font-semibold">The course includes:</h3>
               <div className="space-y-3">
                 {courseData.includes.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
-                      <FiCheck
-                        className="text-green-600 dark:text-green-400"
-                        size={12}
-                      />
-                    </div>
+                    <IoIosCheckmarkCircleOutline size={22} />
                     <span className="text-sm">{item.text}</span>
                   </div>
                 ))}
@@ -282,44 +290,43 @@ const CourseDetail = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-3 mb-6">
-              <button className="w-full bg-primary hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
+            <div className="space-y-3 mb-1 p-4">
+              <button className="w-full text-xs 2xl:text-sm bg-primary hover:bg-blue-700 text-white py-2.5 rounded-full font-semibold transition-colors">
                 Buy now
               </button>
-              <button className="w-full border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 py-3 rounded-lg font-medium transition-colors">
+              <button className="w-full text-xs 2xl:text-sm border border-gray-300 dark:border-gray-600 bg-card py-2.5 rounded-full font-semibold transition-colors">
                 Add to cart
               </button>
             </div>
-
-            {/* Tags */}
-            <div className="space-y-3">
-              <h3 className="font-semibold">Tags</h3>
-              <div className="flex flex-wrap gap-2">
-                {courseData.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+          </div>
+          {/* Tags */}
+          <div className="space-y-3 bg-card-foreground my-4 p-4 rounded-[10px] border">
+            <h3 className="font-semibold">Tags</h3>
+            <div className="flex flex-wrap gap-2">
+              {courseData.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-card font-normal text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
+          </div>
 
-            {/* Share */}
-            <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <h3 className="font-semibold mb-3">Share this course</h3>
-              <div className="flex items-center gap-3">
-                <button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  <FaTwitter className="text-blue-400" size={18} />
-                </button>
-                <button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  <FaLinkedin className="text-blue-600" size={18} />
-                </button>
-                <button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  <FaFacebook className="text-blue-700" size={18} />
-                </button>
-              </div>
+          {/* Share */}
+          <div className="bg-card-foreground p-4 rounded-[10px] border">
+            <h3 className="font-semibold mb-3">Share this course</h3>
+            <div className="flex items-center gap-3">
+              <button className="p-2 rounded-full bg-card hover:bg-slate-50 transition-colors">
+                <RiTwitterXLine className="" size={26} />
+              </button>
+              <button className="p-2 rounded-full bg-card hover:bg-slate-50 transition-colors">
+                <LucideLinkedin className="" size={26} />
+              </button>
+              <button className="p-2 rounded-full bg-card hover:bg-slate-50 transition-colors">
+                <FiFacebook className="" size={26} />
+              </button>
             </div>
           </div>
         </div>
