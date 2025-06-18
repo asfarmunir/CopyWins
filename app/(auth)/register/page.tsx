@@ -22,9 +22,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { FaArrowLeft } from "react-icons/fa6";
 
+import bg1 from "../../../public/authBg1.svg";
+import bg2 from "../../../public/authBg2.svg";
+import bg3 from "../../../public/authbg3.svg";
+
 const carouselItems = [
   {
-    src: "/authBg1.svg",
+    src: bg1,
     alt: "signup1",
     text: (
       <>
@@ -41,7 +45,7 @@ const carouselItems = [
     ),
   },
   {
-    src: "/authBg3.svg",
+    src: bg3,
     alt: "signup3",
     text: (
       <>
@@ -58,7 +62,7 @@ const carouselItems = [
     ),
   },
   {
-    src: "/authBg2.svg",
+    src: bg2,
     alt: "signup2",
     text: (
       <>
@@ -316,14 +320,14 @@ const Register = () => {
               className="object-cover object-center"
               priority
             />
-            <div className="absolute bottom-28 left-0 right-0 flex flex-col items-center text-center gap-2 px-4">
+            <div className="absolute  bottom-16 2xl:bottom-28 left-0 right-0 flex flex-col items-center text-center gap-2 px-4">
               {carouselItems[currentSlide].text}
             </div>
           </motion.div>
         </AnimatePresence>
 
         {/* Carousel indicators */}
-        <div className="absolute bottom-20 left-0 right-0 flex justify-center gap-2">
+        <div className="absolute bottom-10 2xl:bottom-20 left-0 right-0 flex justify-center gap-2">
           {carouselItems.map((_, index) => (
             <button
               key={index}
