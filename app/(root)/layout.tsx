@@ -15,7 +15,7 @@ const Layout = ({
     >
       <Sidebar />
       <main className="flex relative flex-col  items-start  w-full">
-        <section className="  h-full pb-[150px]  overflow-y-auto  max-h-screen md:pb-0 w-full relative ">
+        <section className="  h-full pb-[150px]  overflow-y-auto  max-h-svh md:pb-0 w-full relative ">
           {children}
         </section>
         <div className="fixed bottom-0 w-full md:hidden  z-50">

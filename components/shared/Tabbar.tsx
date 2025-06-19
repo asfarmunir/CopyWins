@@ -26,16 +26,16 @@ const tabLinks = [
     icons: "feed",
     href: "/",
   },
+
+  {
+    title: "Signals",
+    icons: "signal-mobile",
+    href: "/signals",
+  },
   {
     title: "leaders",
     icons: "leaders",
     href: "/leaders",
-  },
-
-  {
-    title: "Subscriptions",
-    icons: "subscrtiption",
-    href: "/my-subscriptions",
   },
 ];
 
@@ -62,8 +62,10 @@ const Tabbar = () => {
               height={30}
               priority
               className={`mx-auto dark:invert ${
-                index === 1 ? "w-[26px] " : "w-[21px]  "
-              }`}
+                index === 2 ? "w-[26px] " : "w-[21px]  "
+              }
+              ${index === 1 ? " mb-1" : ""}
+              `}
             />
             <p className="font-semibold py-1 text-xs capitalize">
               {link.title}
