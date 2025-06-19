@@ -25,61 +25,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import bg1 from "../../../public/authBg1.svg";
 import bg2 from "../../../public/authBg2.svg";
 import bg3 from "../../../public/authbg3.svg";
-
-const carouselItems = [
-  {
-    src: bg1,
-    alt: "signup1",
-    text: (
-      <>
-        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
-          Introducing CopyWins.
-        </h3>
-        <p className="text-sm 2xl:text-base font-semibold text-white">
-          Start turning your skills into income today.
-        </p>
-        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
-          Providers earn $6,500 per month on average.
-        </p>
-      </>
-    ),
-  },
-  {
-    src: bg3,
-    alt: "signup3",
-    text: (
-      <>
-        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
-          Sport Pick Signals
-        </h3>
-        <p className="text-sm 2xl:text-base font-semibold text-white">
-          Get winning sports picks, straight to your feed.
-        </p>
-        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
-          Real signals, real results.
-        </p>
-      </>
-    ),
-  },
-  {
-    src: bg2,
-    alt: "signup2",
-    text: (
-      <>
-        <h3 className="text-xl 2xl:text-2xl font-bold text-white">
-          Copy The Best Trading Signals
-        </h3>
-        <p className="text-sm 2xl:text-base font-semibold text-white">
-          <span className="text-[#55FEFF]">
-            Copy the best Trading signals from{" "}
-          </span>
-          top-performing traders and take <br />
-          your trading to the next level.
-        </p>
-      </>
-    ),
-  },
-];
+import { carouselItems } from "../login/page";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -303,7 +249,14 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="relative hidden h-full flex-1 w-full flex-col items-center justify-center overflow-hidden rounded-xl md:flex">
+      <div
+        className="relative hidden h-full flex-1 w-full flex-col items-center justify-center overflow-hidden rounded-xl md:flex"
+        style={{
+          backgroundImage: `url('/mainbg.svg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -311,13 +264,17 @@ const Register = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0"
+            className="flex  flex-col"
           >
             <Image
-              src={carouselItems[currentSlide].src}
+              src={`/${currentSlide + 1}.svg`}
               alt={carouselItems[currentSlide].alt}
-              fill
-              className="object-cover object-center"
+              width={500}
+              height={500}
+              className={`
+                      w-[550px] h-[550px] 2xl:h-[700px] 2xl:w-[700px] 3xl:w-[830px] 3xl:h-[830px] 
+                      ${currentSlide === 0 ? "mb-32 2xl:mb-40" : "mb-24"}
+                      `}
               priority
             />
             <div className="absolute  bottom-16 2xl:bottom-28 left-0 right-0 flex flex-col items-center text-center gap-2 px-4">

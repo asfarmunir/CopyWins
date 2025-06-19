@@ -148,7 +148,7 @@ const SignalProvidersLeaderboard = () => {
         </div>
       </div>
       {/* Header Section */}
-      <div className="flex items-center flex-col md:flex-row gap-8 justify-between max-w-5xl w-full mx-auto ">
+      <div className="flex items-center flex-col md:flex-row gap-8 justify-between max-w-5xl 2xl:max-w-6xl 3xl:max-w-7xl w-full mx-auto ">
         <div className="flex-1 pt-6 md:pt-0">
           <h1 className="text-2xl 2xl:text-3xl font-bold mb-1 md:mb-2">
             Discover top <span className="text-primary">Signal</span> Providers
@@ -188,7 +188,7 @@ const SignalProvidersLeaderboard = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl w-full mx-auto mt-6">
+      <div className="max-w-5xl 2xl:max-w-6xl  3xl:max-w-7xl w-full mx-auto mt-6">
         <div className="flex flex-col md:flex-row items-center justify-between mb-4">
           <div>
             <h3 className="text-lg 2xl:text-xl font-semibold mb-2">

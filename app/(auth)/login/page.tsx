@@ -32,7 +32,7 @@ const formSchema = z.object({
   }),
 });
 
-const carouselItems = [
+export const carouselItems = [
   {
     src: bg1,
     alt: "signup1",
@@ -56,13 +56,14 @@ const carouselItems = [
     text: (
       <>
         <h3 className="text-xl 2xl:text-2xl font-bold text-white">
-          Sport Pick Signals
+          Copy The Best Trading Signals
         </h3>
         <p className="text-sm 2xl:text-base font-semibold text-white">
-          Get winning sports picks, straight to your feed.
-        </p>
-        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
-          Real signals, real results.
+          <span className="text-[#55FEFF]">
+            Copy the best Trading signals from{" "}
+          </span>
+          top-performing traders and take <br />
+          your trading to the next level.
         </p>
       </>
     ),
@@ -73,14 +74,13 @@ const carouselItems = [
     text: (
       <>
         <h3 className="text-xl 2xl:text-2xl font-bold text-white">
-          Copy The Best Trading Signals
+          Sport Pick Signals
         </h3>
         <p className="text-sm 2xl:text-base font-semibold text-white">
-          <span className="text-[#55FEFF]">
-            Copy the best Trading signals from{" "}
-          </span>
-          top-performing traders and take <br />
-          your trading to the next level.
+          Get winning sports picks, straight to your feed.
+        </p>
+        <p className="text-sm 2xl:text-base font-semibold text-[#55FEFF]">
+          Real signals, real results.
         </p>
       </>
     ),
@@ -119,8 +119,8 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="flex h-screen w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6">
-      <div className="relative flex flex-1 w-full flex-col items-center justify-center p-2 md:p-8 md:py-8 2xl:p-10">
+    <div className="flex h-svh w-full  items-start md:items-center justify-center gap-2 overflow-hidden p-4 md:p-6">
+      <div className="relative flex flex-1 w-full mt-24 md:mt-0 flex-col items-center justify-center p-2 md:p-8 md:py-8 2xl:p-10">
         <div className="max-h-[90svh] w-full sm:w-fit overflow-y-auto scroll-smooth rounded-[24px] bg-card p-4 md:p-6 xl:p-8 shadow-sm [scrollbar-width:none]">
           <Image
             src={"/logo.svg"}

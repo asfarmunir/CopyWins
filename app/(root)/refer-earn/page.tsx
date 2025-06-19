@@ -198,9 +198,9 @@ I wanted to share something that has been helping me with my trading..
         </div>
       </div>
 
-      <div className="max-w-6xl 3xl:max-w-7xl w-full bg-card mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl 3xl:max-w-7xl w-full bg-card mx-auto  py-8">
         {/* Hero Section */}
-        <div className="  border-gray-200 dark:border-gray-700 p-2 md:p-6 lg:p-8 mb-8 w-full ">
+        <div className="  border-gray-200 dark:border-gray-700 p-2 md:py-6 lg:py-8 mb-8 w-full ">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8  w-full">
             <div className="flex-1 text-center lg:text-left w-full">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">

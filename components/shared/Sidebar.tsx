@@ -161,7 +161,7 @@ const Sidebar = () => {
                 src={"/icons/logout.svg"}
                 alt="icon"
                 width={16}
-                className="2xl:w-[20px]"
+                className="2xl:w-[20px] dark:invert"
                 height={16}
                 priority
               />

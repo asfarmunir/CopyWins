@@ -111,7 +111,7 @@ const NotificationsPage = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl 3xl:max-w-7xl w-full  mx-auto p-3 md:p-6">
+      <div className="max-w-6xl 3xl:max-w-7xl w-full  mx-auto py-3 md:py-6">
         {/* Notifications Header */}
         <div className="bg-card rounded-lg  border-gray-200 dark:border-gray-700 mb-6">
           <div className="flex items-center justify-between p-6 mb-4 border-gray-200 dark:border-gray-700">

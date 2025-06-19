@@ -47,7 +47,7 @@ const ManageSubscriptionsPage = () => {
   ];
 
   return (
-    <div className="w-full bg-card rounded-[10px]  h-full border flex flex-col p-6">
+    <div className="w-full bg-card rounded-[10px]  min-h-full  border flex flex-col p-6">
       {/* Breadcrumb */}
       <div className="flex items-center text-sm 3xl:text-base text-gray-500 mb-6 pb-6 border-b">
         <span className="hover:text-gray-700 cursor-pointer">
@@ -60,8 +60,8 @@ const ManageSubscriptionsPage = () => {
       </div>
 
       {/* Header */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="mb-6">
+      <div className="flex items-center flex-col md:flex-row justify-between gap-4 mb-4 md:mb-0">
+        <div className="md:mb-6">
           <h1 className="text-xl 2xl:text-2xl font-semibold mb-1">
             Manage subscriptions
           </h1>
@@ -71,7 +71,7 @@ const ManageSubscriptionsPage = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex items-center  justify-between">
+        <div className="flex items-center  justify-between w-full md:w-fit">
           <div className="flex items-center space-x-1 bg-card-foreground rounded-full w-full p-1">
             <button
               onClick={() => setActiveTab("Active Subscriptions")}

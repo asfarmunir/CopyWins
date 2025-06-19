@@ -358,8 +358,8 @@ const LeadersPage = () => {
         </div>
       </div>
 
-      <div className=" w-full  mx-auto max-w-6xl 3xl:max-w-7xl">
-        <div className="space-y-4 px-4 ">
+      <div className=" w-full  mx-auto max-w-6xl  3xl:max-w-7xl">
+        <div className="space-y-4  ">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-3">
               <h2 className="2xl:text-lg font-semibold">Explore Traders</h2>
