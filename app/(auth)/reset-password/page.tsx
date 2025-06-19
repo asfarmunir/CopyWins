@@ -69,7 +69,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex h-screen w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
+    <div className="flex h-svh w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
       <div className=" absolute top-6 xl:top-8 left-8">
         <Image
           src={"/logo.svg"}
