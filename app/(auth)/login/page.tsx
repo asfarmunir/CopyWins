@@ -119,8 +119,8 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="flex h-svh w-full  items-start md:items-center justify-center gap-2 overflow-hidden p-4 md:p-6">
-      <div className="relative flex flex-1 w-full mt-24 md:mt-0 flex-col items-center justify-center p-2 md:p-8 md:py-8 2xl:p-10">
+    <div className="flex h-svh w-full  items-center justify-center gap-2 overflow-hidden p-4 md:p-6">
+      <div className="relative flex flex-1 w-full  flex-col items-center justify-center p-2 md:p-8 md:py-8 2xl:p-10">
         <div className="max-h-[90svh] w-full sm:w-fit overflow-y-auto scroll-smooth rounded-[24px] bg-card p-4 md:p-6 xl:p-8 shadow-sm [scrollbar-width:none]">
           <Image
             src={"/logo.svg"}
