@@ -72,14 +72,14 @@ const Login = () => {
     <div className="flex h-svh w-full items-center justify-center gap-2 overflow-hidden p-4 md:p-6 ">
       <div className=" absolute hidden top-6 xl:top-8 left-8">
         <Image
-          src={"/logo.svg"}
+          src={"/logo-dark.png"}
           alt="logo"
           className="mb-4 mx-auto dark:hidden "
           width={140}
           height={140}
         />
         <Image
-          src={"/logo-dark.svg"}
+          src={"/logo-light.png"}
           alt="logo"
           className="mb-4 mx-auto dark:block hidden "
           width={140}

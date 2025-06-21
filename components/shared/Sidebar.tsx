@@ -43,7 +43,7 @@ const Sidebar = () => {
            hidden sm:flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-5 3xl:p-7 `}
       >
         <Image
-          src={"/logo.svg"}
+          src={"/logo-dark.png"}
           alt="logo"
           width={140}
           height={140}
@@ -51,7 +51,7 @@ const Sidebar = () => {
           className=" mx-auto 3xl:w-[160px] 2xl:w-[140px] w-[120px] dark:hidden "
         />
         <Image
-          src={"/logo-dark.svg"}
+          src={"/logo-light.png"}
           alt="logo"
           width={140}
           height={140}
@@ -171,7 +171,7 @@ const Sidebar = () => {
       </div>
       {/* <div className="flex sm:hidden items-center p-2 justify-between">
         <Image
-          src={"/logo.svg"}
+          src={"/logo-dark.png"}
           alt="logo"
           width={140}
           height={140}
@@ -179,7 +179,7 @@ const Sidebar = () => {
           className="  dark:hidden "
         />
         <Image
-          src={"/logo-dark.svg"}
+          src={"/logo-light.png"}
           alt="logo"
           width={140}
           height={140}
@@ -197,7 +197,7 @@ const Sidebar = () => {
            flex flex-col gap-2   `}
             >
               <Image
-                src={"/logo.svg"}
+                src={"/logo-dark.png"}
                 alt="logo"
                 width={140}
                 height={140}
@@ -205,7 +205,7 @@ const Sidebar = () => {
                 className=" mx-auto 3xl:w-[160px] 2xl:w-[140px] w-[120px] dark:hidden "
               />
               <Image
-                src={"/logo-dark.svg"}
+                src={"/logo-light.png"}
                 alt="logo"
                 width={140}
                 height={140}

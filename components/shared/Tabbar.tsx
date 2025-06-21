@@ -86,7 +86,7 @@ const Tabbar = () => {
            flex flex-col gap-2   `}
           >
             <Image
-              src={"/logo.svg"}
+              src={"/logo-dark.png"}
               alt="logo"
               width={140}
               height={140}
@@ -94,7 +94,7 @@ const Tabbar = () => {
               className=" mx-auto 3xl:w-[160px] 2xl:w-[140px] w-[120px] dark:hidden "
             />
             <Image
-              src={"/logo-dark.svg"}
+              src={"/logo-light.png"}
               alt="logo"
               width={140}
               height={140}

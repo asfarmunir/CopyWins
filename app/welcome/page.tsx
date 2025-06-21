@@ -605,14 +605,14 @@ const WelcomeSetup = () => {
       />
       <Link href={"/"} className="">
         <Image
-          src="/logo.svg"
+          src="/logo-dark.png"
           alt="Background"
           className="absolute top-4 left-4 dark:hidden"
           width={120}
           height={120}
         />
         <Image
-          src="/logo-dark.svg"
+          src="/logo-light.png"
           alt="Background"
           className="absolute top-4 left-4 hidden dark:block"
           width={120}

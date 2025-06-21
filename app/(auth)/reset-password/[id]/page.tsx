@@ -69,14 +69,14 @@ const Login = () => {
       <div className="relative flex flex-1  w-full flex-col items-center justify-center   p-2 md:p-8 md:py-8 2xl:p-10">
         <div className="max-h-[90svh] w-full  sm:w-fit  overflow-y-auto scroll-smooth rounded-[24px] bg-card-foreground p-4 md:p-6 xl:p-8  shadow-sm [scrollbar-width:none] ">
           <Image
-            src={"/logo.svg"}
+            src={"/logo-dark.png"}
             alt="logo"
             className="mb-4 mx-auto dark:hidden "
             width={130}
             height={130}
           />
           <Image
-            src={"/logo-dark.svg"}
+            src={"/logo-light.png"}
             alt="logo"
             className="mb-4 mx-auto dark:block hidden "
             width={130}
